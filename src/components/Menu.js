@@ -16,7 +16,7 @@ export default () => {
 }
 
 const Frame = styled.div`
-  ${tw`p-2 text-center font-effra text-white text-lg px-5 hover:bg-pendle-yellow hover:text-white font-semibold`}
+  ${tw`p-2 text-center font-effra text-white text-lg px-5 hover:bg-pendle-yellow hover:text-white font-medium text-xl`}
   ${({active}) => active && tw`bg-pendle-yellow text-white`}
 `
 

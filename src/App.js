@@ -11,10 +11,11 @@ import EventsContext from "./context/eventsContext";
 
 import Menu from "./components/Menu";
 import LoadingCard from "./components/LoadingCard";
-import Events from "./screens/Events";
 
 import {useFirebase} from './components/Firebase.js';
 const firebase = useFirebase();
+
+const Events = React.lazy(() => import("./screens/Events"));
 
 const Container = tw.div`w-full h-full fixed bg-gray-200 flex flex-col`;
 const Header = tw.div`w-full bg-white flex flex-row p-3 flex-shrink-0`;
