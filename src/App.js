@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, Suspense} from 'react';
 import tw from 'twin.macro';
 import 'tailwindcss/dist/base.min.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -10,6 +10,7 @@ import CookiesContext from "./context/cookiesContext";
 import EventsContext from "./context/eventsContext";
 
 import Menu from "./components/Menu";
+import LoadingCard from "./components/LoadingCard";
 import Events from "./screens/Events";
 
 import {useFirebase} from './components/Firebase.js';
@@ -26,16 +27,18 @@ export default () => {
       <ContextProviders>
         <Container>
           <Header>
-            <Logo src={PendleLogo}/>
+            <Logo src={PendleLogo} alt="Pendle College Logo"/>
           </Header>
           <Menu/>
           
           <Content>
-            <Switch>
-              <Route path="/sports" component={null}/>
-              <Route path="/jcr" component={null}/>
-              <Route path="/" component={Events}/>
-            </Switch>
+            <Suspense fallback={<LoadingCard/>}>
+              <Switch>
+                <Route path="/sports" component={null}/>
+                <Route path="/jcr" component={null}/>
+                <Route path="/" component={Events}/>
+              </Switch>
+            </Suspense>
           </Content>
         </Container>
       </ContextProviders>
@@ -53,7 +56,7 @@ const ContextProviders = ({children}) => {
       .then(function(querySnapshot) {
           let eventsArray = [];
           querySnapshot.forEach(function(doc) {
-              eventsArray.push(doc.data());
+              eventsArray.push({...doc.data(), id: doc.id});
           });
           setEvents(eventsArray);
       })
