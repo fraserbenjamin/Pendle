@@ -20,7 +20,7 @@ export default () => {
             <Container>
                 <Title>JCR Cook-Off</Title>
                 <Body>
-                Videos still being edited
+                    <iframe title="Billie's Easy Fajitas" width="100%" height="315" src="https://www.youtube.com/embed/1yTg81-tULQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </Body>
 
                 {events.filter(item => `/event/${item.path}` === location.pathname)[0]?.tags?.map((tag,i) => (
