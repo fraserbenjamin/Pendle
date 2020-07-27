@@ -1,26 +1,77 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import tw from 'twin.macro';
+import 'tailwindcss/dist/base.min.css';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
-function App() {
+import PendleLogo from "./assets/pendle-college-logo.svg";
+
+import useLocalStorage from "./hooks/useLocalStorage";
+import CookiesContext from "./context/cookiesContext";
+import EventsContext from "./context/eventsContext";
+
+import Menu from "./components/Menu";
+import Events from "./screens/Events";
+
+import {useFirebase} from './components/Firebase.js';
+const firebase = useFirebase();
+
+const Container = tw.div`w-full h-full fixed bg-gray-200 flex flex-col`;
+const Header = tw.div`w-full bg-white flex flex-row p-3 flex-shrink-0`;
+const Content = tw.div`w-full flex flex-col flex-grow overflow-y-auto`;
+const Logo = tw.img`w-full bg-white h-20`;
+
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ContextProviders>
+        <Container>
+          <Header>
+            <Logo src={PendleLogo}/>
+          </Header>
+          <Menu/>
+          
+          <Content>
+            <Switch>
+              <Route path="/sports" component={null}/>
+              <Route path="/jcr" component={null}/>
+              <Route path="/" component={Events}/>
+            </Switch>
+          </Content>
+        </Container>
+      </ContextProviders>
+    </Router>
   );
 }
 
-export default App;
+const ContextProviders = ({children}) => {
+  const [cookiesAllowed, setCookiesAllowed] = useLocalStorage("cookiesAllowed", false);
+  const [events, setEvents] = useState([]);
+  const db = firebase.firestore();
+
+  useEffect(() => {
+      db.collection("events").get()
+      .then(function(querySnapshot) {
+          let eventsArray = [];
+          querySnapshot.forEach(function(doc) {
+              eventsArray.push(doc.data());
+          });
+          setEvents(eventsArray);
+      })
+      .catch(function(error) {
+          console.log("Error getting documents: ", error);
+      });
+  }, [db]);
+
+  return (
+    <CookiesContext.Provider value={{
+      cookiesAllowed,
+      setCookiesAllowed
+    }}>
+      <EventsContext.Provider value={{
+        events
+      }}>
+        {children}
+      </EventsContext.Provider>
+    </CookiesContext.Provider>
+  )
+}
