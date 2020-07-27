@@ -14,7 +14,7 @@ const Banner = styled.div`
     ${tw`w-full h-64 bg-cover bg-center bg-no-repeat`}
 `;
 const Title = tw.div`font-semibold pt-3 text-lg`;
-const Body = tw.p`my-2 mb-8`;
+const Body = tw.div`my-2 mb-8`;
 
 export default () => {
     const {events} = useContext(EventsContext);

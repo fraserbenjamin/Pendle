@@ -14,7 +14,7 @@ export default ({data}) => {
         <Link to={`/event/${data.path}`}>
             <Container>
                 <Title>{data.title}</Title>
-                {data.description && <Body>{data.description}</Body>}
+                <Body>{data.description}</Body>
 
                 <Tags>
                     {data.tags?.map((tag,i) => (

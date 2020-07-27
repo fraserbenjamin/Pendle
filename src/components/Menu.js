@@ -11,6 +11,7 @@ export default () => {
         <MenuItem link="/sports">Sports</MenuItem>
         <MenuItem link="/blog">The Witch</MenuItem>
         <MenuItem link="/jcr">JCR</MenuItem>
+        <MenuItem link="/welfare">Welfare</MenuItem>
     </Container>
   );
 }
