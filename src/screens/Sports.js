@@ -12,6 +12,10 @@ export default () => {
             <Container>
                 <Title>Sports</Title>
                 <Body>
+                Pendle has a wide variety of successful sporting teams. Last year alone, we won the A team football summer cup, were runners up in the table tennis and A team netball leagues, as well as winning the George Wyatt trophy as university bar sports champions for the third consecutive year!
+                <br/><br/>
+                As well as our very successful teams, there is plenty of opportunity to get involved with recreational sports, with our weekly Wednesday Workout sessions all about participation, as well as casual leagues for sports such as pool throughout the first term to give all Pendle students a chance to get involved!
+                <br/><br/>
                 Here's a list of college sports:
                 <ul>
                     <li>Football</li>

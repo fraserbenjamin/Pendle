@@ -20,7 +20,7 @@ export default () => {
             <Container>
                 <Title>Pendle Live</Title>
                 <Body>
-                    Is this still going ahead?
+                    Details TBC!
                 </Body>
 
                 {events.filter(item => `/event/${item.path}` === location.pathname)[0]?.tags?.map((tag,i) => (
