@@ -11,21 +11,19 @@ import Thomas from "../assets/jcr/thomas.jpg";
 import Yifei from "../assets/jcr/yifei.jpg";
 import Simon from "../assets/jcr/simon.jpg";
 import Laura from "../assets/jcr/laura.jpg";
-//import Jacob from "../assets/jcr/jacob.jpg";
+import Jacob from "../assets/jcr/jacob.jpg";
 
 const Container = styled.div`
     ${tw`flex justify-center p-3 max-w-4xl grid mx-auto gap-3 w-full`}
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
-const Title = tw.div`font-semibold pt-3 text-lg`;
-const Body = tw.p`my-2 mb-8`;
 
 export default () => {
     return (
         <Container>
 
             <JCRCard name="Lewis Powell" role="President" email="l.j.powell2@lancaster.ac.uk" image={Lewis}/>
-            <JCRCard name="Jacob Ackerley" role="VP Events & Engagement" email="j.ackerley@lancaster.ac.uk" image={null}/>
+            <JCRCard name="Jacob Ackerley" role="VP Events & Engagement" email="j.ackerley@lancaster.ac.uk" image={Jacob}/>
             <JCRCard name="Lydia Bellis" role="VP Welfare & Education" email="l.bellis@lancaster.ac.uk" image={Lydia}/>
             <JCRCard name="Billie Harris" role="General Secretary" email="b.harris2@lancaster.ac.uk" image={Billie}/>
             <JCRCard name="Yifei Zhong" role="Welfare Officer (Self-defining Woman)" email="y.zhong3@lancaster.ac.uk" image={Yifei}/>

@@ -19,7 +19,7 @@ export default () => {
                 <Route path="/event/welcome" component={Welcome}/>
                 <Route path="/event/jcr-cook-off" component={CookOff}/>
                 <Route path="/event/virtual-freshers-fair" component={FreshersFair}/>
-                <Route path="/event/pub-quiz" component={PubQuiz}/>
+                <Route path="/event/quiz" component={PubQuiz}/>
                 <Route path="/event/pendle-live" component={PendleLive}/>
                 <Route path="/" exact component={EventsList}/>
             </Switch>
