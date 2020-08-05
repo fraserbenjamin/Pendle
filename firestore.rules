@@ -4,5 +4,9 @@ service cloud.firestore {
     match /{document=**} {
       allow read;
     }
+    match /quiz/{quizData} {
+      allow read;
+      allow write;
+    }
   }
 }
