@@ -9,6 +9,7 @@ export default ({children}) => {
     const [state, setState] = useState({});
     const [teams, setTeams] = useState([]);
     const [questions, setQuestions] = useState({});
+    let teamId = "fraser"
 
     useEffect(() => {
         let unsubscribeState = db.collection("quiz").doc("state")
@@ -34,7 +35,7 @@ export default ({children}) => {
     // eslint-disable-next-line
     }, []);
 
-    const setGuess = (teamId, questionId, guess) => {
+    const setGuess = (questionId, guess) => {
         db.doc("quiz/teams").update({
             [`list.${teamId}.${questionId}`]: guess
         });
@@ -45,7 +46,7 @@ export default ({children}) => {
             state,
             teams,
             questions,
-            teamId: "fraser",
+            teamId,
             setState,
             setTeams,
             setQuestions,
