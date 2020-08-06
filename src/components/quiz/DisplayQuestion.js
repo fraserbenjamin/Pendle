@@ -18,7 +18,6 @@ export default () => {
 
         return (
             <Container>
-                <Link to={`/event/quiz/all`}>All Questions</Link>
                 <Title>[{state.currentQuestion + 1}] {question.title}</Title>
 
                 <Options>

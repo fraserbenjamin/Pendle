@@ -32,8 +32,6 @@ export default () => {
 
     return (
         <Container>
-            <Link to="/event/quiz">Home</Link>
-
             <Title>All Questions</Title>
             {questionList.map((item,i) => <QuestionView key={i} data={item}/>)}
         </Container>

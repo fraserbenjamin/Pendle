@@ -1,6 +1,6 @@
 import React from 'react';
 import tw from 'twin.macro';
-import {Switch, Route, useRouteMatch} from "react-router-dom";
+import {Switch, Route, useRouteMatch, Link} from "react-router-dom";
 
 import DisplayQuestion from '../../components/quiz/DisplayQuestion';
 import TeamDetails from '../../components/quiz/TeamDetails';
@@ -19,14 +19,20 @@ export default () => {
         <StateHandler>
             <Frame>
                 <Container>
+                    <Link to="/event/quiz/">Home</Link><br/>
+                    <Link to="/event/quiz/all">All Questions</Link><br/>
+                    <Link to="/event/quiz/team">Team Details</Link><br/>
+                    <br/>
                     <Title>Pendle Pub Quiz</Title>
 
                     <Video/>
 
-                    <TeamDetails/>
+
+
 
                     <Switch>
                         <Route path={`${match.path}/all`} component={AllQuestions}/>
+                        <Route path={`${match.path}/team`} component={TeamDetails}/>
                         <Route path={match.path} component={DisplayQuestion}/>
                     </Switch>
 
