@@ -39,7 +39,7 @@ export default () => {
                     <rect style={style1} x="102" width="40" height="40" onClick={() => setActive({name: "Canoe", id: "uyge7sz5hVk"})}/>
                     <rect style={style1} x="60" y="42" width="82" height="40" onClick={() => setActive({name: "Volleyball", id: "0KOXooxrEUU"})}/>
                     <polygon style={style1} points="100 166 72 166 60 84 100 84 100 166" onClick={() => setActive({name: "Mountaineering", id: "iH7PNAj2t8Q"})}/>
-                    <rect style={style1} x="102" y="84" width="40" height="40" />
+                    <rect style={style1} x="102" y="84" width="40" height="40" onClick={() => setActive({name: "Badminton", id: "TRtdBbLF_SY"})}/>
                     <rect style={style1} x="102" y="126" width="40" height="40" />
                     <rect style={style2} x="42" y="186" width="40" height="40" />
                     <rect style={style3} x="102" y="186" width="40" height="40" />
@@ -65,6 +65,7 @@ export default () => {
                     <text style={text} transform="translate(107.8 24.01)">Canoe</text>
                     <text style={text} transform="translate(80 65)">Volleyball</text>
                     <text style={text} transform="translate(87.42 160) rotate(-90)">Mountaineering</text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(103 107)">Badminton</text>
                 </svg>
 
                 <Tags>
