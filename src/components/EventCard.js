@@ -1,10 +1,13 @@
 import React from 'react';
-import tw from 'twin.macro';
+import tw, {styled} from 'twin.macro';
 import {Link} from "react-router-dom";
 
 import Tag from "./ui/Tag";
 
-const Container = tw.div`w-full bg-white p-3 font-effra h-full shadow-md flex flex-col`;
+const Container = styled.div(({ highlight }) => [
+    tw`w-full bg-white p-3 font-effra h-full shadow-md flex flex-col`,
+    highlight && tw`border border-2 border-pendle-green`,
+]);
 const Title = tw.div`font-semibold`;
 const Body = tw.p`my-2 flex-grow`;
 const Tags = tw.p`w-full overflow-x-auto`;
@@ -12,7 +15,7 @@ const Tags = tw.p`w-full overflow-x-auto`;
 export default ({data}) => {
     return (
         <Link to={`/event/${data.path}`}>
-            <Container>
+            <Container highlight={data.highlight}>
                 <Title>{data.title}</Title>
                 <Body>{data.description}</Body>
 

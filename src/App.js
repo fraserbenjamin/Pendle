@@ -2,6 +2,7 @@ import React, {useState, useEffect, Suspense} from 'react';
 import tw from 'twin.macro';
 import 'tailwindcss/dist/base.min.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import moment from "moment";
 
 import PendleLogo from "./assets/pendle-college-logo.svg";
 
