@@ -1,8 +1,7 @@
 import React, {useState, useEffect, Suspense} from 'react';
 import tw from 'twin.macro';
 import 'tailwindcss/dist/base.min.css';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import moment from "moment";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 import PendleLogo from "./assets/pendle-college-logo.svg";
 
@@ -22,7 +21,7 @@ const Sports = React.lazy(() => import("./screens/Sports"));
 const JCR = React.lazy(() => import("./screens/JCR"));
 
 const Container = tw.div`w-full h-full fixed bg-gray-200 flex flex-col`;
-const Header = tw.div`w-full bg-white flex flex-row p-3 flex-shrink-0`;
+const Header = tw.div`w-full bg-white flex flex-row p-3 flex-shrink-0 cursor-pointer`;
 const Content = tw.div`w-full flex flex-col flex-grow overflow-y-auto`;
 const Logo = tw.img`w-full bg-white h-20`;
 
@@ -31,9 +30,11 @@ export default () => {
     <Router>
       <ContextProviders>
         <Container>
-          <Header>
-            <Logo src={PendleLogo} alt="Pendle College Logo"/>
-          </Header>
+          <Link to="/">
+            <Header>
+              <Logo src={PendleLogo} alt="Pendle College Logo"/>
+            </Header>
+          </Link>
           <Menu/>
           
           <Content>
