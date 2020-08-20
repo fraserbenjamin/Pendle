@@ -41,7 +41,7 @@ export default () => {
           <Content>
             <Suspense fallback={<LoadingCard/>}>
               <Switch>
-                <Route path="/the-witch" component={Witch}/>
+                <Route path="/blog" component={Witch}/>
                 <Route path="/sports" component={Sports}/>
                 <Route path="/welfare" component={Welfare}/>
                 <Route path="/jcr" component={JCR}/>
