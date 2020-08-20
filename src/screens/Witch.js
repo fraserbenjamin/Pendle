@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import moment from "moment";
 import { Link } from 'react-router-dom';
 
-const Container = tw.div`flex flex-col justify-center w-full mx-auto max-w-6xl p-3`;
+const Container = tw.div`grid justify-center w-full mx-auto max-w-6xl p-3`;
 
 export default () => {
     const articles = [
@@ -82,11 +82,11 @@ export default () => {
   );
 }
 
-const Card = tw.div`bg-white font-effra h-auto shadow-md flex flex-col mb-8`;
-const Frame = tw.div`p-3 flex flex-col`;
+const Card = tw.div`bg-white font-effra shadow-md grid mb-8`;
+const Frame = tw.div`p-3 block grid`;
 const Title = tw.div`font-bold text-3xl`;
 const Line = tw.div`w-full h-1 bg-pendle-yellow`;
-const Extract = tw.div`font-normal pt-2 text-base`;
+const Extract = tw.div`font-normal pt-2 flex-grow`;
 const Author = tw.div`font-medium text-xl pt-2`;
 const Date = tw.div`bg-pendle-green text-white font-medium px-5 py-2 w-auto rounded-full`;
 const Info = tw.div`flex flex-row justify-end`;
