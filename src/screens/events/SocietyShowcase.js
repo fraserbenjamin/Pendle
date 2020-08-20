@@ -107,7 +107,7 @@ export default () => {
                     <text style={{...text, fontSize: "8px"}} transform="translate(187 107)">Badminton</text>
                     <text style={{...text, fontSize: "8px"}} transform="translate(193 149)">Fencing</text>
                     
-                    {/* Purple Zone */}
+                    {/*  Left Purple Zone */}
                     <text style={text} transform="translate(131 209)">LA1TV</text>
                     <text style={{...text, fontSize: "6px"}} transform="translate(87 208)">Trampolining</text>
                     <text style={{...text, fontSize: "8px"}} transform="translate(46 208)">Shooting</text>
@@ -121,6 +121,42 @@ export default () => {
                     </text>
                     <text style={text} transform="translate(48 251)">Sailing</text>
                     <text style={text} transform="translate(108 251)">Korfball</text>
+
+                    {/* Right Purple Zone */}
+                    <text style={text} transform="translate(190 209)">Parkour</text>
+                    <text style={text} transform="translate(205 252)">Bailrigg FM</text>
+                    <text style={text} transform="translate(277 252)">Hiking</text>
+                    <text style={text} transform="translate(235 192)">
+                        <tspan x="3" dy="1.2em">American</tspan>
+                        <tspan x="6" dy="1.2em">Football</tspan>
+                    </text>
+
+                    {/* Right Blue Zone */}
+                    <text style={{...text, fontSize: "8px"}} transform="translate(330 237)">
+                        <tspan x="3" dy="1.2em">Women's</tspan>
+                        <tspan x="6" dy="1.2em">Football</tspan>
+                    </text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(375 250)">Debating</text>
+                    <text style={text} transform="translate(378 209)">K Pop</text>
+
+                    {/* Left Blue Zone */}
+                    <text style={{...text, fontSize: "8px"}} transform="translate(4 7)">
+                        <tspan x="4" dy="1.2em">Men's</tspan>
+                        <tspan x="0" dy="1.2em">Lacrosse</tspan>
+                    </text>
+                    <text style={{...text, fontSize: "6px"}} transform="translate(44 22)">Cheerleading</text>
+                    <text style={text} transform="translate(9 86)">Craft</text>
+                    <text style={text} transform="translate(46 65)">Culture</text>
+                    <text style={text} transform="translate(67 107)">Squash</text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(3 148)">Benchball</text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(46 134)">
+                        <tspan x="0" dy="1.2em">Women's</tspan>
+                        <tspan x="0" dy="1.2em">Lacrosse</tspan>
+                    </text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(90 134)">
+                        <tspan x="5" dy="1.2em">Pole</tspan>
+                        <tspan x="0" dy="1.2em">Fitness</tspan>
+                    </text>
                 </svg>
 
                 <Tags>
