@@ -1,5 +1,5 @@
 import React, {useContext, useState} from 'react';
-import tw from 'twin.macro';
+import tw, {styled} from 'twin.macro';
 import {useLocation} from "react-router-dom";
 
 import EventsContext from "../../context/eventsContext";
@@ -12,6 +12,12 @@ const Container = tw.div`w-full bg-white font-effra h-full shadow-md max-w-4xl p
 const Title = tw.div`font-semibold pt-3 text-lg mb-1`;
 const Body = tw.div`font-normal pt-3 text-lg mb-5`;
 const Tags = tw.div`mt-5`;
+const A = tw.a`underline`;
+const MapCase = tw.div`w-full h-64 sm:h-auto overflow-auto mx-auto border border-pendle-green border-2 md:border-0`;
+const Map = styled.svg`
+    ${tw`md:mx-auto m-3`}
+    width: 720px;
+`;
 
 export default () => {
     const {events} = useContext(EventsContext);
@@ -30,13 +36,13 @@ export default () => {
         <Frame>
             <Container>
                 <Title>Society Showcase</Title>
-                <Body>Click on a stall to see a highlight video from the society</Body>
+                <Body>Click on a stall to see a highlight video from the society.<br/>Or view the full playlist <A href="https://www.youtube.com/playlist?list=PL6B2iUJ3mVHFiOevKJOXPw4_RtIQu5cru" target="_blank">here</A></Body>
 
                 {active && <YouTubePopup id={active.id} close={() => setActive(null)}/>}
 
 
-
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453 328">
+                <MapCase>
+                <Map xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453 328">
                     {/* <rect style={style1} x="60" width="40" height="40" onClick={() => setActive({name: "Barbell", id: "GcvUPdTmmJU"})}/>
                     <rect style={style1} x="102" width="40" height="40" onClick={() => setActive({name: "Canoe", id: "uyge7sz5hVk"})}/>
                     <rect style={style1} x="60" y="42" width="82" height="40" onClick={() => setActive({name: "Volleyball", id: "0KOXooxrEUU"})}/>
@@ -182,7 +188,8 @@ export default () => {
                         <tspan x="0" dy="1.2em">Ballroom</tspan>
                         <tspan x="1" dy="1.2em">Dancing</tspan>
                     </text>
-                </svg>
+                </Map>
+                </MapCase>
 
                 <Tags>
                     {events.filter(item => `/event/${item.path}` === location.pathname)[0]?.tags?.map((tag,i) => (
