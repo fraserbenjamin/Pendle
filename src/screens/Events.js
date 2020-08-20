@@ -10,6 +10,7 @@ const SocietyShowcase = React.lazy(() => import("../screens/events/SocietyShowca
 const PubQuiz = React.lazy(() => import("../screens/events/PubQuiz"));
 const PendleLive = React.lazy(() => import("../screens/events/PendleLive"));
 const MeetCoursemates = React.lazy(() => import("../screens/events/MeetCoursemates"));
+const BeachParty = React.lazy(() => import("../screens/events/BeachParty"));
 
 const Container = tw.div``;
 
@@ -18,6 +19,7 @@ export default () => {
         <Container>
             <Switch>
                 <Route path="/event/meet-coursemates" component={MeetCoursemates}/>
+                <Route path="/event/beach-party" component={BeachParty}/>
                 <Route path="/event/welcome" component={Welcome}/>
                 <Route path="/event/jcr-cook-off" component={CookOff}/>
                 <Route path="/event/society-showcase" component={SocietyShowcase}/>
