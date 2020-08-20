@@ -7,13 +7,13 @@ import EventsContext from '../context/eventsContext';
 import EventCard from "../components/EventCard";
 
 //const Container = tw.div`w-full bg-pendle-green flex flex-row whitespace-no-wrap overflow-x-auto`;
-const Container = tw.div`w-full`;
-const Row = styled.div`
+const Container = styled.div`
     ${tw`w-full h-auto grid gap-4 p-3 overflow-y-auto`}
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
-const Section = tw.div``;
-const Header = tw.div`ml-5 font-bold mt-3`;
+
+const DateCard = tw.div`w-full bg-pendle-green text-white text-3xl p-3 font-effra h-full shadow-md flex flex-col justify-end`
+const Title = tw.div`font-semibold`;
 
 export default () => {
     const {events} = useContext(EventsContext);
@@ -42,12 +42,12 @@ export default () => {
         <Container>
             {dates.map((date, i) => {
                 return (
-                    <Section key={i}>
-                        <Header>{moment(date).format("dddd, Do MMMM")}</Header>
-                        <Row>
-                            {filter[date].map((event, j) => <EventCard key={j} data={event}></EventCard>)}
-                        </Row>
-                    </Section>
+                    <React.Fragment key={i}>
+                        <DateCard>
+                            <Title>{moment(date).format("dddd, Do MMMM")}</Title>
+                        </DateCard>
+                        {filter[date].map((event, j) => <EventCard key={j} data={event}></EventCard>)}
+                    </React.Fragment>
                 );
             })}
         </Container>
