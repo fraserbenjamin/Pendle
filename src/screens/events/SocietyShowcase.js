@@ -99,12 +99,28 @@ export default () => {
                     <rect style={style1} x="364" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
                     <polygon style={style1} points="406 328 406 288 446 288 446 313 431 328 406 328" onClick={() => setActive({name: "", id: ""})}/>
 
+                    {/* Top Green Zone */}
                     <text style={text} transform="translate(148.57 24.14)">Barbell</text>
                     <text style={text} transform="translate(190.8 24.01)">Canoe</text>
                     <text style={text} transform="translate(163 65)">Volleyball</text>
                     <text style={text} transform="translate(170 160) rotate(-90)">Mountaineering</text>
                     <text style={{...text, fontSize: "8px"}} transform="translate(187 107)">Badminton</text>
                     <text style={{...text, fontSize: "8px"}} transform="translate(193 149)">Fencing</text>
+                    
+                    {/* Purple Zone */}
+                    <text style={text} transform="translate(131 209)">LA1TV</text>
+                    <text style={{...text, fontSize: "6px"}} transform="translate(87 208)">Trampolining</text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(46 208)">Shooting</text>
+                    <text style={text} transform="translate(5 195)">
+                        <tspan x="3" dy="1.2em">Water</tspan>
+                        <tspan x="6" dy="1.2em">Polo</tspan>
+                    </text>
+                    <text style={text} transform="translate(7 234)">
+                        <tspan x="0" dy="1.2em">Rugby</tspan>
+                        <tspan x="0" dy="1.2em">Union</tspan>
+                    </text>
+                    <text style={text} transform="translate(48 251)">Sailing</text>
+                    <text style={text} transform="translate(108 251)">Korfball</text>
                 </svg>
 
                 <Tags>
