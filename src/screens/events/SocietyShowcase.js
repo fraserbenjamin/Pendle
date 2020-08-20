@@ -157,6 +157,31 @@ export default () => {
                         <tspan x="5" dy="1.2em">Pole</tspan>
                         <tspan x="0" dy="1.2em">Fitness</tspan>
                     </text>
+
+                    {/* Red Zone */}
+                    <text style={text} transform="translate(252 24)">Boxing</text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(293 8)">
+                        <tspan x="0" dy="1.2em">Women's</tspan>
+                        <tspan x="3" dy="1.2em">Cricket</tspan>
+                    </text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(333 23)">Photosoc</text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(341 49)">
+                        <tspan x="0" dy="1.2em">Boat</tspan>
+                        <tspan x="0" dy="1.2em">Club</tspan>
+                    </text>
+                    <text style={text} transform="translate(293 64)">LUSing</text>
+                    <text style={text} transform="translate(250 102) rotate(-90)">
+                        <tspan x="0" dy="1.2em">Precious</tspan>
+                        <tspan x="2" dy="1.2em">Plastics</tspan>
+                    </text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(287 134)">
+                        <tspan x="1" dy="1.2em">Harry</tspan>
+                        <tspan x="0" dy="1.2em">Potter</tspan>
+                    </text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(334 134)">
+                        <tspan x="0" dy="1.2em">Ballroom</tspan>
+                        <tspan x="1" dy="1.2em">Dancing</tspan>
+                    </text>
                 </svg>
 
                 <Tags>
