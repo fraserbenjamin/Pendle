@@ -23,8 +23,15 @@ export default () => {
                 <Route path="/event/society-showcase" component={SocietyShowcase}/>
                 <Route path="/event/quiz" component={PubQuiz}/>
                 <Route path="/event/pendle-live" component={PendleLive}/>
+                <Route path="/event/:id" component={Placeholder}/>
                 <Route path="/" exact component={EventsList}/>
             </Switch>
         </Container>
+    );
+}
+
+const Placeholder = () => {
+    return (
+        <div>This event hasn't been setup</div>
     );
 }
