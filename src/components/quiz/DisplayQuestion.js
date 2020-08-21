@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import tw, {styled} from 'twin.macro';
-import {Link, useRouteMatch} from "react-router-dom";
+//import {useRouteMatch} from "react-router-dom";
 
 import QuizContext from "../../context/quizContext";
 
@@ -10,10 +10,10 @@ const Options = tw.div`w-full p-3 grid grid-cols-2`;
 const Option = styled.button`${tw`m-2 p-3 rounded-sm font-semibold`}${props => props.selected ? tw`bg-pendle-yellow text-black` : tw`bg-pendle-green text-white`}`;
 
 export default () => {
-    const match = useRouteMatch();
+    //const match = useRouteMatch();
     const {state, teams, questions, setGuess, teamId} = useContext(QuizContext);
 
-    if(state.currentQuestion >= 0 && questions?.list?.length > 0 && teams?.list && teamId) {
+    if(state.currentQuestion >= 0 && questions?.list?.length > 0 && teams?.list && teamId && state.currentQuestion < questions.list.length) {
         let question = questions.list[state.currentQuestion];
 
         return (
@@ -30,5 +30,5 @@ export default () => {
         );
     }
 
-    return "No Question Loaded"
+    return "No Question Found"
 }

@@ -27,7 +27,7 @@ export default () => {
         });
 
         return Array.from(datesSet).sort((a, b) => moment(a).diff(moment(b)));
-    })
+    }, [events]);
 
     const filter = useMemo(() => {
         let result = {};
@@ -36,7 +36,7 @@ export default () => {
             result[date] = events.filter(item => moment(item.start?.toDate()).isSame(moment(date), 'day'));
         });
         return result;
-    }, [events]);
+    }, [events, dates]);
 
     return (
         <Container>

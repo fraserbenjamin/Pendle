@@ -73,7 +73,7 @@ export default () => {
                     <rect style={style3} x="330" width="40" height="40" onClick={() => setActive({name: "Photosoc", id: "1nBIqoWFULk"})}/>
                     <rect style={style4} x="329" y="228" width="40" height="40" onClick={() => setActive({name: "Women's Football", id: "p1wFm9yl8QQ"})}/>
                     <rect style={style4} x="371" y="228" width="40" height="40" onClick={() => setActive({name: "Debating", id: "hBZLyXGrxi4"})}/>
-                    <polygon style={style4} points="369 186 369 226 329 226 329 201 344 186 369 186" onClick={() => setActive({name: "", id: ""})}/> {/*Missed Out*/}
+                    <polygon style={style4} points="369 186 369 226 329 226 329 201 344 186 369 186" onClick={() => setActive({name: "Disney", id: "TDPIdO-BVXw"})}/>
                     <rect style={style4} x="371" y="186" width="40" height="40" onClick={() => setActive({name: "K Pop", id: "DmV0e0Oqb6k"})}/>
                     <rect style={style2} x="84" y="228" width="82" height="40" onClick={() => setActive({name: "Korfball", id: "hJNVDiw8nGg"})}/>
                     <polygon style={style3} points="330 82 330 42 370 42 370 67 355 82 330 82" onClick={() => setActive({name: "Boat Club", id: "tgsdV7pWyUE"})}/>
@@ -144,6 +144,7 @@ export default () => {
                     </text>
                     <text style={{...text, fontSize: "8px"}} transform="translate(375 250)">Debating</text>
                     <text style={text} transform="translate(378 209)">K Pop</text>
+                    <text style={text} transform="translate(335 209)">Disney</text>
 
                     {/* Left Blue Zone */}
                     <text style={{...text, fontSize: "8px"}} transform="translate(4 7)">

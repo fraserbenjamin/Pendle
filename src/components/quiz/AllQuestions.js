@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import tw from 'twin.macro';
-import {Link, useRouteMatch} from "react-router-dom";
+//import {useRouteMatch} from "react-router-dom";
 
 import QuizContext from "../../context/quizContext";
 import QuestionView from "./QuestionView";
@@ -9,7 +9,7 @@ const Container = tw.div`w-full font-effra p-3`;
 const Title = tw.div`font-bold p-3 text-lg`;
 
 export default () => {
-    const match = useRouteMatch();
+    //const match = useRouteMatch();
     const {state, teams, questions, teamId} = useContext(QuizContext);
     const [questionList, setQuestionList] = useState([]);
 

@@ -27,9 +27,6 @@ export default () => {
 
                     <Video/>
 
-
-
-
                     <Switch>
                         <Route path={`${match.path}/all`} component={AllQuestions}/>
                         <Route path={`${match.path}/team`} component={TeamDetails}/>
