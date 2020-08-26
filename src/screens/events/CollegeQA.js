@@ -24,7 +24,7 @@ export default () => {
     return (
         <Frame>
             <Container>
-                <Title>Meet Your Coursemates</Title>
+                <Title>College Life Q and A</Title>
                 <Body>
                     {event?.description}
                     <br/><br/>
