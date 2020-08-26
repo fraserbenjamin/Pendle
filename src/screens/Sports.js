@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import tw from 'twin.macro';
-import Gallery from 'react-grid-gallery';
+import useDimensions from 'react-use-dimensions';
+
+
 import Grid from '../components/photo-grid';
 import {useFirebase} from '../components/Firebase';
 const firebase = useFirebase();
@@ -9,13 +11,14 @@ const Frame = tw.div`flex justify-center p-3`;
 const Container = tw.div`w-full bg-white font-effra h-full shadow-md max-w-4xl p-3`;
 const Title = tw.div`font-semibold pt-3 text-lg`;
 const Body = tw.div`my-2 mb-8`;
+const PhotoGrid = tw.div`overflow-hidden`;
 
 export default () => {
     const [images, setImages] = useState([]);
     var storage = firebase.storage();
     var storageRef = storage.ref();
     var listRef = storageRef.child('Gallery/Sports');
-
+    const [gridRef, gridSize] = useDimensions();
 
     useEffect(() => {
         listRef.listAll().then(function(res) {
@@ -66,14 +69,14 @@ export default () => {
                 </ul>
                 </Body>
 
-                {/* <Gallery images={images} enableLightbox={true} enableImageSelection={false}/> */}
-
-                <Grid
-                    images={images}
-                    rowHeight={200}
-                    margin={5}
-                    width={800}
-                />
+                <PhotoGrid ref={gridRef}>
+                    <Grid
+                        images={images}
+                        rowHeight={200}
+                        margin={5}
+                        width={Math.floor(gridSize.width)}
+                    />
+                </PhotoGrid>
             </Container>
         </Frame>
   );
