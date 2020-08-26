@@ -1,15 +1,25 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from "react-router-dom";
 
+import useLocalStorage from "../../hooks/useLocalStorage";
 import QuizContext from '../../context/quizContext';
 import {useFirebase} from '../../components/Firebase';
 const firebase = useFirebase();
 
 export default ({children}) => {
+    const history = useHistory();
     const db = firebase.firestore();
     const [state, setState] = useState({});
     const [teams, setTeams] = useState([]);
     const [questions, setQuestions] = useState({});
-    let teamId = "fraser"
+    const [teamId, setTeamId] = useLocalStorage("teamId", null);
+
+    useEffect(() => {
+        console.log(teamId)
+        if(!teamId || teamId === "null") {
+            history.push("/event/quiz/introduction")
+        }
+    }, [teamId])
 
     useEffect(() => {
         let unsubscribeState = db.collection("quiz").doc("state")
@@ -47,6 +57,7 @@ export default ({children}) => {
             teams,
             questions,
             teamId,
+            setTeamId,
             setState,
             setTeams,
             setQuestions,

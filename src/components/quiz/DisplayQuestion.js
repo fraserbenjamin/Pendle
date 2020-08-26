@@ -21,10 +21,10 @@ export default () => {
                 <Title>[{state.currentQuestion + 1}] {question.title}</Title>
 
                 <Options>
-                    <Option selected={teams.list[teamId][state.currentQuestion] === 1} onClick={() => setGuess(state.currentQuestion, 1)}>{question.option1}</Option>
-                    <Option selected={teams.list[teamId][state.currentQuestion] === 2} onClick={() => setGuess(state.currentQuestion, 2)}>{question.option2}</Option>
-                    <Option selected={teams.list[teamId][state.currentQuestion] === 3} onClick={() => setGuess(state.currentQuestion, 3)}>{question.option3}</Option>
-                    <Option selected={teams.list[teamId][state.currentQuestion] === 4} onClick={() => setGuess(state.currentQuestion, 4)}>{question.option4}</Option>
+                    <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 1} onClick={() => setGuess(state.currentQuestion, 1)}>{question.option1}</Option>
+                    <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 2} onClick={() => setGuess(state.currentQuestion, 2)}>{question.option2}</Option>
+                    <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 3} onClick={() => setGuess(state.currentQuestion, 3)}>{question.option3}</Option>
+                    <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 4} onClick={() => setGuess(state.currentQuestion, 4)}>{question.option4}</Option>
                 </Options>
             </Container>
         );

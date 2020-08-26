@@ -5,6 +5,7 @@ export default createContext({
     teams: null,
     questions:null,
     teamId: null,
+    setTeamId: null,
     setState: () => null,
     setTeams: () => null,
     setQuestions: () => null,
