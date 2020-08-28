@@ -54,19 +54,13 @@ export default () => {
             <Container>
                 <Title>Sports</Title>
                 <Body>
-                Pendle has a wide variety of successful sporting teams. Last year alone, we won the A team football summer cup, were runners up in the table tennis and A team netball leagues, as well as winning the George Wyatt trophy as university bar sports champions for the third consecutive year!
+                Pendle has a wide variety of successful sporting teams. Last year alone, the netball A team won the league and were headed to Roses to represent Lancaster against York. The women's pool team and the new Pendle rugby team also finished top of their leagues, with table tennis, women's darts and dominoes coming runners up and A team football finishing third. On top of this, Pendle is known for its outstanding barsports and has won the George Wyatt Trophy five out of the last seven years.
                 <br/><br/>
-                As well as our very successful teams, there is plenty of opportunity to get involved with recreational sports, with our weekly Wednesday Workout sessions all about participation, as well as casual leagues for sports such as pool throughout the first term to give all Pendle students a chance to get involved!
+                As well as our very successful sports teams, Pendle is also known on campus for its supporters. The community and friendships between all the Pendle college sports members sets Pendle apart from the other colleges.
                 <br/><br/>
-                Here's a list of college sports:
-                <ul>
-                    <li>Football</li>
-                    <li>Netball</li>
-                    <li>Table Tennis</li>
-                    <li>Darts</li>
-                    <li>Pool</li>
-                    <li>Dominos</li>
-                </ul>
+                Pendle Cup is a sporting event exclusive to Pendle and is a great way to bring competition alive in the second term, once Freshers have settled into their teams. It allows the sports teams to go head to head to battle for the championship through playing each other at all the college sports. Netballers against Darts players playing football. You wouldn't want to miss it.
+                <br/><br/>
+                Finally, Warriors is a big end of year sporting competition between Pendle and Grizedale. It is a celebration of the sporting year and offers a fun outlet for those getting ready for summer term exams. Here, not only are the college sports involved, but also other sports, such as basketball or hockey. The sports offer opportunities for everyone to get involved, regardless of ability or knowledge of the game, so it provides the perfect mix of competitiveness and sociability. If you're not overly sporty though, there is still a chance to get involved throughout the Warriors weekend, by buying Pendle merch to show college pride, as well as participating in the non-sports events such as the Warriors Pub Quiz, various eating competitions and more! There's a space for everyone to get involved!
                 </Body>
 
                 <PhotoGrid ref={gridRef}>
