@@ -63,7 +63,7 @@ export default () => {
                     <rect style={style2} x="84" y="186" width="40" height="40" onClick={() => setActive({name: "Trampolining", id: "uku-0rHNZGk"})}/>
                     <rect style={style2} x="186" y="228" width="82" height="40" onClick={() => setActive({name: "Bailrigg FM", id: "OFRTPJo9cK8"})}/>
                     <polygon style={style2} points="310 226 228 226 228 186 270 186 310 226" onClick={() => setActive({name: "American Football", id: "U5JVw15zKBc"})}/>
-                    <rect style={style2} x="270" y="228" width="40" height="40" onClick={() => setActive({name: "Hiking", id: "3YbwAMkBiYE"})}/>
+                    <rect style={style2} x="270" y="228" width="40" height="40" onClick={() => setActive({name: "Hiking", id: "A15kNr98Sfo"})}/>
                     <polygon style={style3} points="327 166 286.5 166 246 126 327 126 327 166" onClick={() => setActive({name: "Harry Potter", id: "rutHQPEwGfk"})}/>
                     <rect style={style3} x="329" y="126" width="40" height="40" onClick={() => setActive({name: "Ballroom Dancing", id: "lD-cyltQWaU"})}/>
                     <rect style={style3} x="246" y="42" width="40" height="82" onClick={() => setActive({name: "Precious Plastics", id: "_5uMj5McjSw"})}/>
@@ -89,11 +89,11 @@ export default () => {
                     <rect style={style4} x="42" y="42" width="40" height="40" onClick={() => setActive({name: "Culture", id: "y-gjPS9EBOY"})}/>
                     <rect style={style4} x="42" width="40" height="40" onClick={() => setActive({name: "Cheerleading", id: "l97GYDJ0UQE"})}/>
                     <rect style={style4} width="40" height="40" onClick={() => setActive({name: "Men's Lacrosse", id: "ez2Pis-S_yc"})}/>
-                    <rect style={style4} x="413" y="228" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style4} x="413" y="186" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style3} x="371" y="126" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style3} x="413" y="126" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <polygon style={style4} points="124 40 84 40 84 0 109 0 124 15 124 40" onClick={() => setActive({name: "", id: ""})}/>
+                    <rect style={style4} x="413" y="228" width="40" height="40" onClick={() => setActive({name: "Netball", id: "k6PMoboADrQ"})}/>
+                    <rect style={style4} x="413" y="186" width="40" height="40" onClick={() => setActive({name: "Baking", id: "iG1bPwtWjW4"})}/>
+                    <rect style={style3} x="371" y="126" width="40" height="40" onClick={() => setActive({name: "SCAN", id: "gO--DpoSHwU"})}/>
+                    <rect style={style3} x="413" y="126" width="40" height="40" onClick={() => setActive({name: "ISSUE", id: "DpnoaqjrKko"})}/>
+                    <polygon style={style4} points="124 40 84 40 84 0 109 0 124 15 124 40" onClick={() => setActive({name: "Acapella", id: "7dkfGRs4O3U"})}/>
                     <polygon style={style3} points="453 84 412 84 371 124 453 124 453 84" onClick={() => setActive({name: "", id: ""})}/>
                     <rect style={style1} x="52" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
                     <rect style={style1} x="94" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
@@ -145,6 +145,8 @@ export default () => {
                     <text style={{...text, fontSize: "8px"}} transform="translate(375 250)">Debating</text>
                     <text style={text} transform="translate(378 209)">K Pop</text>
                     <text style={text} transform="translate(335 209)">Disney</text>
+                    <text style={text} transform="translate(418 209)">Baking</text>
+                    <text style={text} transform="translate(418 252)">Netball</text>
 
                     {/* Left Blue Zone */}
                     <text style={{...text, fontSize: "8px"}} transform="translate(4 7)">
@@ -164,6 +166,7 @@ export default () => {
                         <tspan x="5" dy="1.2em">Pole</tspan>
                         <tspan x="0" dy="1.2em">Fitness</tspan>
                     </text>
+                    <text style={{...text, fontSize: "8px"}} transform="translate(89 24)">Acapella</text>
 
                     {/* Red Zone */}
                     <text style={text} transform="translate(252 24)">Boxing</text>
@@ -189,6 +192,8 @@ export default () => {
                         <tspan x="0" dy="1.2em">Ballroom</tspan>
                         <tspan x="1" dy="1.2em">Dancing</tspan>
                     </text>
+                    <text style={text} transform="translate(378 150)">SCAN</text>
+                    <text style={text} transform="translate(420 150)">ISSUE</text>
                 </Map>
                 </MapCase>
 
