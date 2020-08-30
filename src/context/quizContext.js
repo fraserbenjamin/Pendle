@@ -10,4 +10,5 @@ export default createContext({
     setTeams: () => null,
     setQuestions: () => null,
     setGuess: () => null,
+    round: null,
 });

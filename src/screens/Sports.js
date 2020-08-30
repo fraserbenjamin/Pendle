@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import tw from 'twin.macro';
 import useDimensions from 'react-use-dimensions';
 
@@ -47,7 +47,7 @@ export default () => {
         }).catch(function(error) {
             // Uh-oh, an error occurred!
         });
-    }, []);
+    }, [listRef]);
 
     return (
         <Frame>
