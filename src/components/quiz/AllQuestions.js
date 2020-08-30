@@ -23,7 +23,6 @@ export default () => {
                     answer: (teams.list[teamId]) ? teams.list[teamId][i] : null,
                 });
             }
-            console.log(result)
             setQuestionList(result);
         }
     }, [questions, teamId, teams, state]);

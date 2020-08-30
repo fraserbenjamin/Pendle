@@ -13,7 +13,7 @@ const styleHandler = (active, selected) => {
     if(!active && !selected) return tw`bg-gray-400 text-black cursor-not-allowed`;
 }
 
-const Options = tw.div`w-full p-3 flex flex-row`;
+const Options = tw.div`w-full p-3 flex flex-row flex-wrap`;
 const Option = styled.button`${tw`flex-grow m-2 p-3 rounded-sm font-semibold`}${props => styleHandler(props.active, props.selected)}`;
 
 export default ({data, active}) => {

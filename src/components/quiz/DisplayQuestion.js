@@ -22,7 +22,8 @@ export default () => {
                 
                 <Team onClick={() => history.push("/event/quiz/introduction")}>Team {teamId}</Team>
                 
-                <Title>[{question.round}][{state.currentQuestion + 1}] {question.title}</Title>
+                <Title>Round {question.round} Question {state.currentQuestion + 1}</Title>
+                <Title>{question.title}</Title>
 
                 <Options>
                     <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 1} onClick={() => setGuess(state.currentQuestion, 1)}>{question.option1}</Option>

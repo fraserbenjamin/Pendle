@@ -3,7 +3,6 @@ import tw from 'twin.macro';
 import {Switch, Route, useRouteMatch} from "react-router-dom";
 
 import DisplayQuestion from '../../components/quiz/DisplayQuestion';
-import TeamDetails from '../../components/quiz/TeamDetails';
 import AllQuestions from '../../components/quiz/AllQuestions';
 import Introduction from '../../components/quiz/Introduction';
 import Video from '../../components/quiz/Video';

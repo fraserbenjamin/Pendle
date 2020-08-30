@@ -20,7 +20,6 @@ export default ({children}) => {
     const [teamId, setTeamId] = useLocalStorage("teamId", generateRandom());
 
     useEffect(() => {
-        console.log(teamId)
         if(!teamId || teamId === "null") {
             history.push("/event/quiz/introduction")
         }
