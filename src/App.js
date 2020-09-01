@@ -11,6 +11,7 @@ import EventsContext from "./context/eventsContext";
 
 import Menu from "./components/Menu";
 import LoadingCard from "./components/LoadingCard";
+import Cookies from "./components/Cookies";
 
 import {useFirebase} from './components/Firebase.js';
 const firebase = useFirebase();
@@ -30,6 +31,7 @@ export default () => {
     return (
         <Router>
         <ContextProviders>
+            <Cookies/>
             <Container>
             <Link to="/">
                 <Header>
