@@ -14,6 +14,7 @@ const BeachParty = React.lazy(() => import("../screens/events/BeachParty"));
 const CollegeQA = React.lazy(() => import("../screens/events/CollegeQA"));
 const MeetDeaneryCAT = React.lazy(() => import("../screens/events/MeetDeaneryCAT"));
 const MeetCollegeStaff = React.lazy(() => import("../screens/events/MeetCollegeStaff"));
+const PendleParty = React.lazy(() => import("../screens/events/PendleParty"));
 
 const Container = tw.div``;
 
@@ -21,6 +22,7 @@ export default () => {
     return (
         <Container>
             <Switch>
+                <Route path="/event/party-playlist" component={PendleParty}/>
                 <Route path="/event/meet-college-staff" component={MeetCollegeStaff}/>
                 <Route path="/event/meet-deanery-cat" component={MeetDeaneryCAT}/>
                 <Route path="/event/meet-coursemates" component={MeetCoursemates}/>

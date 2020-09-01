@@ -3,6 +3,7 @@ import tw, {styled} from 'twin.macro';
 import { useHistory } from "react-router-dom";
 
 import QuizContext from "../../context/quizContext";
+import QuestionView from "./QuestionView";
 
 const Container = tw.div`w-full font-effra p-3`;
 const Title = tw.div`font-bold p-3 text-lg`;
@@ -15,22 +16,17 @@ export default () => {
     const {state, teams, questions, setGuess, teamId} = useContext(QuizContext);
 
     if(state.currentQuestion >= 0 && questions?.list?.length > 0 && teams?.list && teamId && state.currentQuestion < questions.list.length) {
-        let question = questions.list[state.currentQuestion];
+        let questionId = state.currentQuestion;
+        let question = questions.list[questionId];
+        let answer = (teams.list[teamId]) ? teams.list[teamId][questionId] : null;
 
         return (
             <Container>
                 
                 <Team onClick={() => history.push("/event/quiz/introduction")}>Team {teamId}</Team>
-                
-                <Title>Round {question.round} Question {state.currentQuestion + 1}</Title>
-                <Title>{question.title}</Title>
 
-                <Options>
-                    <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 1} onClick={() => setGuess(state.currentQuestion, 1)}>{question.option1}</Option>
-                    <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 2} onClick={() => setGuess(state.currentQuestion, 2)}>{question.option2}</Option>
-                    <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 3} onClick={() => setGuess(state.currentQuestion, 3)}>{question.option3}</Option>
-                    <Option selected={teams.list[teamId] && teams.list[teamId][state.currentQuestion] === 4} onClick={() => setGuess(state.currentQuestion, 4)}>{question.option4}</Option>
-                </Options>
+                <Title>Round {question.round} Question {state.currentQuestion + 1}</Title>
+                <QuestionView data={{question, answer, questionId}} active={true}/>
             </Container>
         );
     }
