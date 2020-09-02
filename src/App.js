@@ -13,7 +13,7 @@ import Menu from "./components/Menu";
 import LoadingCard from "./components/LoadingCard";
 import Cookies from "./components/Cookies";
 
-import {useFirebase} from './components/Firebase.js';
+import Firebase, {useFirebase} from './components/Firebase.js';
 const firebase = useFirebase();
 
 const Events = React.lazy(() => import("./screens/Events"));
@@ -32,6 +32,7 @@ export default () => {
         <Router>
         <ContextProviders>
             <Cookies/>
+            <Firebase/>
             <Container>
             <Link to="/">
                 <Header>
@@ -41,6 +42,7 @@ export default () => {
             <Menu/>
             
             <Content>
+
                 <Suspense fallback={<LoadingCard/>}>
                     <Switch>
                         <Route path="/blog" component={Witch}/>
