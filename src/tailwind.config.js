@@ -132,6 +132,10 @@ module.exports = {
         yellow: "#f7a800",
         green: "#006400",
         grey: "#231f20"
+      },
+      lancaster: {
+          red: "#b5121b",
+          blue: "#4b7d94",
       }
     },
     spacing: {
