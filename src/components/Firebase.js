@@ -24,6 +24,10 @@ export const useFirebase = () => {
   return firebase;
 }
 
+export const useAnalytics = () => {
+  return firebase.analytics();
+}
+
 export default () => {
   const {cookiesAllowed} = useContext(CookiesContext);
   

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import tw from 'twin.macro';
 import useDimensions from 'react-use-dimensions';
 
+import {useAnalytics} from "../components/Firebase";
 
 import Grid from '../components/photo-grid';
 import {useFirebase} from '../components/Firebase';
@@ -19,6 +20,11 @@ export default () => {
     var storageRef = storage.ref();
     var listRef = storageRef.child('Gallery/Sports');
     const [gridRef, gridSize] = useDimensions();
+    const analytics = useAnalytics();
+
+    analytics.logEvent('page_view', {
+        page_title: 'Sports',
+    });
 
     useEffect(() => {
         listRef.listAll().then(function(res) {

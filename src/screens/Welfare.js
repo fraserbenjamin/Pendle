@@ -1,6 +1,8 @@
 import React from 'react';
 import tw from 'twin.macro';
 
+import {useAnalytics} from "../components/Firebase";
+
 import WelfarePoster from '../assets/welfare-poster.png';
 import WelfarePosterWebP from '../assets/welfare-poster.webp';
 
@@ -12,6 +14,12 @@ const Poster = tw.img`w-full`;
 const Download = tw.a`relative flex justify-center w-full mt-3 text-center underline`;
 
 export default () => {
+    const analytics = useAnalytics();
+
+    analytics.logEvent('page_view', {
+        page_title: 'Welfare',
+    });
+
     return (
         <Frame>
             <Container>

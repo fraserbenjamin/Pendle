@@ -17,7 +17,7 @@ export default () => {
             <Body>Watch the following video produced by the Students' Union on Respect and Consent.</Body>
 
             <YouTubeButton onClick={() => setVideoActive(true)}/>
-            {videoActive && <YouTubePopup id="ph7Dbt58-eA" close={() => setVideoActive(false)}/>}
+            {videoActive && <YouTubePopup id="DcG8KuGSpZI" close={() => setVideoActive(false)}/>}
         </Container>
   );
 }

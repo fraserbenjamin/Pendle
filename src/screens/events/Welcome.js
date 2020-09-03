@@ -6,6 +6,7 @@ import EventsContext from "../../context/eventsContext";
 
 import Tag from "../../components/ui/Tag";
 import PendleCollege from "../../assets/pendle-college-quad.webp";
+import {useAnalytics} from "../../components/Firebase";
 
 const Frame = tw.div`flex justify-center p-3`;
 const Container = tw.div`w-full bg-white font-effra h-full shadow-md max-w-4xl p-3`;
@@ -19,6 +20,11 @@ const Body = tw.div`my-2 mb-8`;
 export default () => {
     const {events} = useContext(EventsContext);
     const location = useLocation();
+    const analytics = useAnalytics();
+
+    analytics.logEvent('page_view', {
+        page_title: 'Welcome',
+    });
 
     return (
         <Frame>

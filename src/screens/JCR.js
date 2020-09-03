@@ -1,6 +1,8 @@
 import React from 'react';
 import tw, {styled} from 'twin.macro';
 
+import {useAnalytics} from "../components/Firebase";
+
 import Lewis from "../assets/jcr/lewis.jpg";
 import Fraser from "../assets/jcr/fraser.jpg";
 import Megan from "../assets/jcr/megan.jpg";
@@ -19,6 +21,13 @@ const Container = styled.div`
 `;
 
 export default () => {
+    const analytics = useAnalytics();
+
+    analytics.logEvent('page_view', {
+        page_title: 'JCR',
+    });
+
+
     return (
         <Container>
 

@@ -3,6 +3,7 @@ import tw from 'twin.macro';
 import {Switch, Route} from "react-router-dom";
 
 import EventsList from "../components/EventsList";
+import {useAnalytics} from "../components/Firebase";
 
 const Welcome = React.lazy(() => import("../screens/events/Welcome"));
 const CookOff = React.lazy(() => import("../screens/events/CookOff"));
@@ -19,6 +20,12 @@ const PendleParty = React.lazy(() => import("../screens/events/PendleParty"));
 const Container = tw.div``;
 
 export default () => {
+    const analytics = useAnalytics();
+
+    analytics.logEvent('page_view', {
+        page_title: 'Events',
+    });
+
     return (
         <Container>
             <Switch>
