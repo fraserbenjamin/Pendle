@@ -39,14 +39,14 @@ export default () => {
 
     const Welcome = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Welcome</div>
+            <div tw="text-pendle-green font-bold text-xl">Welcome</div>
             The following presentation will take you through the key areas of fire safety.
         </div>
     )
 
     const Section1 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Covered in this presentation</div>
+            <div tw="text-pendle-green font-bold text-xl">Covered in this presentation</div>
             <ul tw="list-disc ml-5 text-lg">
                 <li>Reduce the risk of fire Incidents happening, learning  from a fire incident</li>
                 <li>Learn about basic fire procedures and means of escape</li>
@@ -59,7 +59,7 @@ export default () => {
 
     const Section2 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Here are some Fire Facts</div>
+            <div tw="text-pendle-green font-bold text-xl">Here are some Fire Facts</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li><b>Fire is FAST!</b> In less than 30 seconds a small flame can turn into a major fire. It only takes minutes for thick black smoke to fill a room or for it to be engulfed in flames.</li>
                 <li><b>Fire is HOT!</b> Heat is more threatening than flames. Room temperatures in a fire can be 100 degrees at floor level and rise to 600 degrees at eye level. Inhaling this super-hot air will scorch your lungs and melt clothes to your skin.</li>
@@ -74,7 +74,7 @@ export default () => {
 
     const Section3 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Fire in Student Accommodation</div>
+            <div tw="text-pendle-green font-bold text-xl">Fire in Student Accommodation</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Fire at Cube building in Bolton, the block was six storeys in height, the fire started at approx. 8.30 pm  on Friday 15th November 2019</li>
                 <li>217 students in the building at the time of the fire</li>
@@ -90,7 +90,7 @@ export default () => {
 
     const Section4 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Kitchen Fire Safety</div>
+            <div tw="text-pendle-green font-bold text-xl">Kitchen Fire Safety</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Do not leave your cooking unattended and avoid being under the influence of alcohol when cooking. On a recent Sky news survey 60% students cook whilst drunk and 15% students fall asleep!</li>
                 <li>Do clean your dirty grill pans, pans and cookers to stop a build up of grease otherwise any build-up can lead to ignition and fire</li>
@@ -107,7 +107,7 @@ export default () => {
 
     const Section5 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Forbidden Items</div>
+            <div tw="text-pendle-green font-bold text-xl">Forbidden Items</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Tea lights and candles</li>
                 <li>Oil Lamps</li>
@@ -124,7 +124,7 @@ export default () => {
 
     const Section6 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Smoking and Vaping</div>
+            <div tw="text-pendle-green font-bold text-xl">Smoking and Vaping</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Smoking and ‘vaping’ is strictly prohibited in all residences</li>
                 <li>And….so is covering up a detector! In fact it is a criminal offence</li>
@@ -139,7 +139,7 @@ export default () => {
 
     const Section7 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Fire Doors</div>
+            <div tw="text-pendle-green font-bold text-xl">Fire Doors</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Fire doors are there for your protection they are designed to hold fire and smoke back so you can make your escape</li>
                 <li>They have self closing devices and smoke and heat seals fitted</li>
@@ -154,7 +154,7 @@ export default () => {
 
     const Section8 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Fire Exits and Exit Routes</div>
+            <div tw="text-pendle-green font-bold text-xl">Fire Exits and Exit Routes</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Keep your escape route clear, this is to prevent a build up of combustible materials and avoids tripping hazards</li>
                 <li>In an emergency it is common to find that people usually exit the same way they entered the building</li>
@@ -169,7 +169,7 @@ export default () => {
 
     const Section9 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Human Behaviour – Why people fail to evacuate</div>
+            <div tw="text-pendle-green font-bold text-xl">Human Behaviour – Why people fail to evacuate</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Peer pressure looking for someone else to take the lead and escape</li>
                 <li>Cultural…wait to be told to evacuate</li>
@@ -182,7 +182,7 @@ export default () => {
 
     const Section10 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Electrical Hazards Part 1</div>
+            <div tw="text-pendle-green font-bold text-xl">Electrical Hazards Part 1</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Avoid charging your electrical equipment at night. Vapes have been known to explode and cause serious fires. </li>
                 <li>Faulty device batteries can overheat. Do not leave curling tongs on combustible surfaces or laptops on your bedding</li>
@@ -199,7 +199,7 @@ export default () => {
 
     const Section11 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Electrical Hazards Part 2</div>
+            <div tw="text-pendle-green font-bold text-xl">Electrical Hazards Part 2</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>If you have non-UK electrical equipment DO NOT assume a ‘UK adaptor’ is safe.</li>
                 <li>Make sure the plug carries the CE safety label and you purchase form a reliable stockist</li>
@@ -215,7 +215,7 @@ export default () => {
 
     const Section12 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Emergency Procedures if you discover a fire</div>
+            <div tw="text-pendle-green font-bold text-xl">Emergency Procedures if you discover a fire</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Raise the alarm by operating the nearest fire alarm call point</li>
                 <li>Leave and close doors behind you and get out of the building</li>
@@ -235,7 +235,7 @@ export default () => {
 
     const Section13 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Emergency Procedures when the Fire Alarm Sounds</div>
+            <div tw="text-pendle-green font-bold text-xl">Emergency Procedures when the Fire Alarm Sounds</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Leave the building</li>
                 <li>Always, always, always leave the building</li>
@@ -253,7 +253,7 @@ export default () => {
 
     const Section14 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Fire Evacuation</div>
+            <div tw="text-pendle-green font-bold text-xl">Fire Evacuation</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>When the fire alarm sounds you must evacuate the building. No ifs or buts! You must respond promptly delay can lead to loss of life</li>
                 <li>Don’t assume it’s a false alarm or system fault, or its only a fire drill! real fire incidents have happened during a fire drill!</li>
@@ -265,7 +265,7 @@ export default () => {
 
     const Section15 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Fire Fighting Equipment</div>
+            <div tw="text-pendle-green font-bold text-xl">Fire Fighting Equipment</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>IS NOT for your use – trained personnel will need to use it if necessary</li>
                 <li>DO NOT tamper with this equipment as it always needs to be in good working order in the event that it is needed to put out a fire</li>
@@ -281,7 +281,7 @@ export default () => {
 
     const Section16 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Assisted Evacuation – for Disabled users</div>
+            <div tw="text-pendle-green font-bold text-xl">Assisted Evacuation – for Disabled users</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>If you usually require the use of a lift to go about your normal daily life you will not be able to use these when the fire alarm is sounding.</li>
                 <li>Move to an enclosed staircase or a refuge point and summon assistance. You are now in a safe temporary waiting area</li>
@@ -299,7 +299,7 @@ export default () => {
 
     const Section17 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Accidental Alarm Activations</div>
+            <div tw="text-pendle-green font-bold text-xl">Accidental Alarm Activations</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>For your safety there are detectors in all kitchens, bedrooms and corridors</li>
                 <li>Smoke detectors are easily activated by the slightest hint of smoke, steam and other particles</li>
@@ -310,7 +310,7 @@ export default () => {
 
     const Section18 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Tips on How to Avoid Accidental Fire Alarm Activations</div>
+            <div tw="text-pendle-green font-bold text-xl">Tips on How to Avoid Accidental Fire Alarm Activations</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>Kitchens – never leave cooking unattended and keep your pans and cooker clean and grease free</li>
                 <li>Do not smoke or vape in University buildings</li>
@@ -323,7 +323,7 @@ export default () => {
 
     const Section19 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">In summary</div>
+            <div tw="text-pendle-green font-bold text-xl">In summary</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>You must do your bit to prevent fires</li>
                 <li>Always stay with your food when cooking</li>
@@ -340,7 +340,7 @@ export default () => {
 
     const Section20 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">So just in case you weren't taking notice…..A reminder about Cooking!!!</div>
+            <div tw="text-pendle-green font-bold text-xl">So just in case you weren't taking notice…..A reminder about Cooking!!!</div>
             Please click the button below to watch the video.
 
             {videoOpen && <YouTubePopup id="DI2oboY2Jl0" close={() => setVideoOpen(false)}/>}
@@ -350,7 +350,7 @@ export default () => {
 
     const Section21 = (
         <div>
-            <div tw="text-lancaster-red font-bold text-xl">Finally</div>
+            <div tw="text-pendle-green font-bold text-xl">Finally</div>
             <ul tw="list-disc ml-5 text-lg mb-5">
                 <li>If you want to be reminded of any of the elements of this talk please sign up for the <a href="https://modules.lancaster.ac.uk/enrol/index.php?id=6083" target="_blank" rel="noopener noreferrer" tw="text-orange-500 underline">Moodle on Fire Safety.</a></li>
                 <li>Remember there is important fire & Health and safety advice & guidance contained in your <a tw="underline" href="https://www.lancaster.ac.uk/media/lancaster-university/content-assets/documents/accommodation/residentshandbook.pdf" target="_blank" rel="noopener noreferrer">Residents handbook</a></li>
@@ -373,7 +373,7 @@ export default () => {
     return (
         <Container>
             <div tw="mb-8">
-                <Button onClick={() => history.push("/talks")}>Back to All Introductions</Button>
+                <Button onClick={() => history.push("/talks")} tw="bg-pendle-yellow text-black font-medium">Back to All Introductions</Button>
             </div>
 
             {sections[currentSection]}
