@@ -13,7 +13,8 @@ import Menu from "./components/Menu";
 import LoadingCard from "./components/LoadingCard";
 import Cookies from "./components/Cookies";
 
-import Firebase, {useFirebase} from './components/Firebase.js';
+import Messenger from './components/Messenger';
+import Firebase, {useFirebase} from './components/Firebase';
 const firebase = useFirebase();
 
 const Events = React.lazy(() => import("./screens/Events"));
@@ -21,6 +22,7 @@ const Welfare = React.lazy(() => import("./screens/Welfare"));
 const Sports = React.lazy(() => import("./screens/Sports"));
 const JCR = React.lazy(() => import("./screens/JCR"));
 const Witch = React.lazy(() => import("./screens/Witch"));
+const Talks = React.lazy(() => import("./screens/Talks"));
 
 const Container = tw.div`w-full h-full fixed bg-gray-200 flex flex-col`;
 const Header = tw.div`w-full bg-white flex flex-row p-3 flex-shrink-0 cursor-pointer`;
@@ -33,6 +35,7 @@ export default () => {
         <ContextProviders>
             <Cookies/>
             <Firebase/>
+            <Messenger/>
             <Container>
             <Link to="/">
                 <Header>
@@ -45,6 +48,7 @@ export default () => {
 
                 <Suspense fallback={<LoadingCard/>}>
                     <Switch>
+                        <Route path="/talks" component={Talks}/>
                         <Route path="/blog" component={Witch}/>
                         <Route path="/sports" component={Sports}/>
                         <Route path="/welfare" component={Welfare}/>
