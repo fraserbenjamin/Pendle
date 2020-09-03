@@ -366,6 +366,7 @@ export default () => {
         analytics.logEvent('page_view', {
             page_title: `Fire Safety ${currentSection}`,
         });
+    //eslint-disable-next-line
     }, [currentSection])
 
     const history = useHistory();

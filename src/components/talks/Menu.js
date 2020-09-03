@@ -1,5 +1,5 @@
 import React from 'react';
-import tw, {styled} from 'twin.macro';
+import tw from 'twin.macro';
 import {Link} from "react-router-dom";
 
 import CollegesWebp from "../../assets/colleges.webp";
