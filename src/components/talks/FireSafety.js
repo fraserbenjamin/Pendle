@@ -26,7 +26,7 @@ import YouTubeButton from '../ui/YouTubeButton';
 import YouTubePopup from '../YouTubePopup';
 
 const Container = tw.div`flex flex-col justify-center p-3`;
-const Button = tw.button`bg-lancaster-red text-white py-1 px-5 rounded-md`;
+const Button = tw.button`bg-pendle-green text-white py-1 px-5 rounded-md`;
 
 export default () => {
     const analytics = useAnalytics();
@@ -373,7 +373,7 @@ export default () => {
     return (
         <Container>
             <div tw="mb-8">
-                <Button onClick={() => history.push("/talks")} tw="bg-pendle-green">Back to All Introductions</Button>
+                <Button onClick={() => history.push("/talks")}>Back to All Introductions</Button>
             </div>
 
             {sections[currentSection]}
