@@ -7,7 +7,7 @@ import CookiesContext from "../context/cookiesContext";
 export default () => {
     const {cookiesAllowed} = useContext(CookiesContext);
     const location = useLocation();
-    const pages = ["/", "/jcr"]
+    const pages = ["/", "/jcr", "/sports", "/blog"]
 
     if(!cookiesAllowed) return null;
 

@@ -6,11 +6,12 @@ import {useAnalytics} from "../components/Firebase";
 
 import Grid from '../components/photo-grid';
 import {useFirebase} from '../components/Firebase';
+import InstragramButton from '../components/ui/InstragramButton';
 const firebase = useFirebase();
 
 const Frame = tw.div`flex justify-center p-3`;
 const Container = tw.div`w-full bg-white font-effra h-full shadow-md max-w-4xl p-3`;
-const Title = tw.div`font-semibold pt-3 text-lg`;
+const Title = tw.div`font-semibold mt-3 text-lg`;
 const Body = tw.div`my-2 mb-8`;
 const PhotoGrid = tw.div`overflow-hidden`;
 
@@ -68,6 +69,13 @@ export default () => {
                 <br/><br/>
                 Finally, Warriors is a big end of year sporting competition between Pendle and Grizedale. It is a celebration of the sporting year and offers a fun outlet for those getting ready for summer term exams. Here, not only are the college sports involved, but also other sports, such as basketball or hockey. The sports offer opportunities for everyone to get involved, regardless of ability or knowledge of the game, so it provides the perfect mix of competitiveness and sociability. If you're not overly sporty though, there is still a chance to get involved throughout the Warriors weekend, by buying Pendle merch to show college pride, as well as participating in the non-sports events such as the Warriors Pub Quiz, various eating competitions and more! There's a space for everyone to get involved!
                 </Body>
+
+                <Title>Follow our college sports below</Title>
+                <div tw="grid grid-cols-3 gap-3 mb-5">
+                    <InstragramButton onClick={() => window.open("https://www.instagram.com/pendlecollegesport/", "_blank")}>@pendlecollegesport</InstragramButton>
+                    <InstragramButton onClick={() => window.open("https://www.instagram.com/pendlenetball/", "_blank")}>@pendlenetball</InstragramButton>
+                    <InstragramButton onClick={() => window.open("https://www.instagram.com/pendlecollegefc/", "_blank")}>@pendlecollegefc</InstragramButton>
+                </div>
 
                 <PhotoGrid ref={gridRef}>
                     <Grid

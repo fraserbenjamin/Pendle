@@ -16,6 +16,9 @@ const CollegeQA = React.lazy(() => import("../screens/events/CollegeQA"));
 const MeetDeaneryCAT = React.lazy(() => import("../screens/events/MeetDeaneryCAT"));
 const MeetCollegeStaff = React.lazy(() => import("../screens/events/MeetCollegeStaff"));
 const PendleParty = React.lazy(() => import("../screens/events/PendleParty"));
+const Discord = React.lazy(() => import("../screens/events/Discord"));
+const CoffeeMorning = React.lazy(() => import("../screens/events/CoffeeMorning"));
+const SpendingTime = React.lazy(() => import("../screens/events/SpendingTime"));
 
 const Container = tw.div``;
 
@@ -29,6 +32,9 @@ export default () => {
     return (
         <Container>
             <Switch>
+                <Route path="/event/time-in-pendle" component={SpendingTime}/>
+                <Route path="/event/coffee-morning" component={CoffeeMorning}/>
+                <Route path="/event/discord" component={Discord}/>
                 <Route path="/event/party-playlist" component={PendleParty}/>
                 <Route path="/event/meet-college-staff" component={MeetCollegeStaff}/>
                 <Route path="/event/meet-deanery-cat" component={MeetDeaneryCAT}/>
