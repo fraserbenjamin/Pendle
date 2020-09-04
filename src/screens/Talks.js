@@ -5,7 +5,6 @@ import {Switch, Route} from "react-router-dom";
 import Menu from '../components/talks/Menu';
 import RespectConsent from '../components/talks/RespectConsent';
 import FireSafety from '../components/talks/FireSafety';
-import Bystander from '../components/talks/Bystander';
 import HealthSafety from '../components/talks/HealthSafety';
 
 import {useAnalytics} from "../components/Firebase";
@@ -27,7 +26,6 @@ export default () => {
                     <Route path="/talks/respect-consent" component={RespectConsent}/>
                     <Route path="/talks/fire-safety" component={FireSafety}/>
                     <Route path="/talks/health-safety" component={HealthSafety}/>
-                    <Route path="/talks/bystander" component={Bystander}/>
                     <Route path="/" component={Menu}/>
                 </Switch>
             </Container>

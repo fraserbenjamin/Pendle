@@ -15,7 +15,6 @@ const Colleges = tw.img`w-full`;
 
 const Fire = tw(Item)`bg-red-600 text-white`;
 const Consent = tw(Item)`bg-purple-800 text-white`;
-const Bystander = tw(Item)`bg-blue-600 text-white`;
 const Safety = tw(Item)`bg-teal-600 text-white`;
 
 export default () => {
@@ -36,9 +35,6 @@ export default () => {
                 <Consent to="/talks/respect-consent">
                     <MenuTitle>Respect and Consent</MenuTitle>
                 </Consent>
-                <Bystander to="/talks/bystander">
-                    <MenuTitle>Bystander</MenuTitle>
-                </Bystander>
                 <Safety to="/talks/health-safety">
                     <MenuTitle>Health and Safety</MenuTitle>
                 </Safety>
