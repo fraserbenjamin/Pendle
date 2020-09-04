@@ -30,7 +30,13 @@ export default ({id, close, autoplay=true}) => {
         <>
             <Cover />
             <Container onClick={close}>
-                <Player width={size[0]} height={size[1]} src={`https://www.youtube.com/embed/${id}?rel=0&autoplay=${autoplay ? "1" : "0"}&controls=1&fs=1`} allow="accelerometer; autoplay; modestbranding; encrypted-media; gyroscope; picture-in-picture" frameBorder="0" allowFullScreen></Player>
+                <Player
+                    width={size[0]}
+                    height={size[1]}
+                    src={`https://www.youtube.com/embed/${id}?rel=0&autoplay=${autoplay ? "1" : "0"}&controls=1&fs=1`}
+                    allow="accelerometer; autoplay; modestbranding; encrypted-media; gyroscope; picture-in-picture"
+                    frameBorder="0"
+                    allowFullScreen></Player>
             </Container>
         </>
   );

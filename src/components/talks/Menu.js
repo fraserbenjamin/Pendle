@@ -2,7 +2,7 @@ import React from 'react';
 import tw from 'twin.macro';
 import {Link} from "react-router-dom";
 
-import CollegesWebp from "../../assets/colleges.webp";
+import CollegesWebp from "../../assets/colleges.jpg";
 
 const Title = tw.div`font-semibold pt-3 text-lg`;
 const Body = tw.div`my-2 mb-3`;
