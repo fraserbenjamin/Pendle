@@ -68,7 +68,7 @@ const PrimaryVideo = () => {
             <div tw="text-pendle-green font-bold text-xl">Fire Safety Essentials</div>
             The following presentation by Gary Seekins will take you through the key areas of fire safety you need to know.
 
-            {videoOpen && <YouTubePopup id="sjGFYhgenXY" close={() => setVideoOpen(false)}/>}
+            {videoOpen && <YouTubePopup id="MjbqBaAr1Vo" close={() => setVideoOpen(false)}/>}
             <YouTubeButton onClick={() => setVideoOpen(true)}/>
         </div>
     );

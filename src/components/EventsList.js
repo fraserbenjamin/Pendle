@@ -1,6 +1,7 @@
 import React, {useContext, useMemo} from 'react';
 import tw, {styled} from 'twin.macro';
 import moment from "moment";
+import { motion } from "framer-motion";
 
 import EventsContext from '../context/eventsContext';
 
@@ -12,7 +13,6 @@ const Container = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
 
-const DateCard = tw.div`w-full bg-pendle-green text-white text-3xl p-3 font-effra h-full shadow-md flex flex-col justify-end`
 const Title = tw.div`font-semibold`;
 
 export default () => {
@@ -43,13 +43,26 @@ export default () => {
             {dates.map((date, i) => {
                 return (
                     <React.Fragment key={i}>
-                        <DateCard>
-                            <Title>{moment(date).format("dddd, Do MMMM")}</Title>
-                        </DateCard>
+                        <DateCard date={date}/>
                         {filter[date].map((event, j) => <EventCard key={j} data={event}></EventCard>)}
                     </React.Fragment>
                 );
             })}
         </Container>
     );
+}
+
+const Frame = tw(motion.div)`w-full border border-4 border-pendle-green text-black bg-green-400 text-3xl p-3 font-effra h-full shadow-md flex flex-col justify-end`
+
+const DateCard = ({date}) => {
+    return (
+        <Frame
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.1 }}
+        >
+            <Title>{moment(date).format("dddd")}</Title>
+            <Title>{moment(date).format("Do MMMM")}</Title>
+        </Frame>
+    )
 }

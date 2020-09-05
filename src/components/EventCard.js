@@ -1,10 +1,11 @@
 import React from 'react';
 import tw, {styled} from 'twin.macro';
 import {Link} from "react-router-dom";
+import { motion } from "framer-motion";
 
 import Tag from "./ui/Tag";
 
-const Container = styled.div(({ highlight }) => [
+const Container = styled(motion.div)(({ highlight }) => [
     tw`w-full bg-white p-3 font-effra h-full shadow-md flex flex-col`,
     highlight && tw`border border-2 border-pendle-yellow`,
 ]);
@@ -15,7 +16,12 @@ const Tags = tw.p`w-full overflow-x-auto`;
 export default ({data}) => {
     return (
         <Link to={`/event/${data.path}`}>
-            <Container highlight={data.highlight}>
+            <Container
+                highlight={data.highlight}
+                initial={{ scale: 0.7 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.1 }}
+            >
                 <Title>{data.title}</Title>
                 <Body>{data.description}</Body>
 
