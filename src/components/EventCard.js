@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Tag from "./ui/Tag";
 
 const Container = styled(motion.div)(({ highlight }) => [
-    tw`w-full bg-white p-3 font-effra h-full shadow-md flex flex-col`,
+    tw`w-full bg-white p-3 font-effra h-full shadow flex flex-col`,
     highlight && tw`border border-2 border-pendle-yellow`,
 ]);
 const Title = tw.div`font-semibold`;

@@ -9,7 +9,7 @@ import EventCard from "../components/EventCard";
 
 //const Container = tw.div`w-full bg-pendle-green flex flex-row whitespace-no-wrap overflow-x-auto`;
 const Container = styled.div`
-    ${tw`w-full h-auto grid gap-4 p-3 overflow-y-auto`}
+    ${tw`w-full h-auto grid gap-4 p-3 overflow-y-auto bg-white`}
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
 
@@ -52,7 +52,7 @@ export default () => {
     );
 }
 
-const Frame = tw(motion.div)`w-full border border-4 border-pendle-green text-black bg-green-400 text-3xl p-3 font-effra h-full shadow-md flex flex-col justify-end`
+const Frame = tw(motion.div)`w-full bg-pendle-green text-white text-3xl p-3 font-effra h-full shadow flex flex-col justify-end`
 
 const DateCard = ({date}) => {
     return (
