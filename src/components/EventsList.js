@@ -9,7 +9,7 @@ import EventCard from "../components/EventCard";
 
 //const Container = tw.div`w-full bg-pendle-green flex flex-row whitespace-no-wrap overflow-x-auto`;
 const Container = styled.div`
-    ${tw`w-full h-auto grid gap-4 p-3 overflow-y-auto bg-white`}
+    ${tw`w-full h-auto grid gap-4 p-3 overflow-y-auto bg-gray-100`}
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 `;
 
