@@ -2,12 +2,13 @@ import React, {useContext} from 'react';
 import tw from 'twin.macro';
 import {Switch, Route, useRouteMatch} from "react-router-dom";
 
-import DisplayQuestion from '../../components/quiz/DisplayQuestion';
-import AllQuestions from '../../components/quiz/AllQuestions';
-import Introduction from '../../components/quiz/Introduction';
-import Video from '../../components/quiz/Video';
+import DisplayQuestion from './DisplayQuestion';
+import AllQuestions from './AllQuestions';
+import Introduction from './Introduction';
+import Video from './Video';
 
 import QuizContext from "../../context/quizContext";
+import Admin from './Admin';
 
 const Frame = tw.div`flex justify-center p-0 sm:p-3`;
 const Container = tw.div`w-full bg-white font-effra h-full shadow-md max-w-4xl p-3`;
@@ -24,6 +25,7 @@ export default () => {
                 <Video/>
 
                 <Switch>
+                    <Route path={`${match.path}/admin`} component={Admin}/>
                     <Route path={`${match.path}/all`} component={AllQuestions}/>
                     <Route path={`${match.path}/introduction`} component={Introduction}/>
                     <Route path={match.path} component={DisplayQuestion}/>

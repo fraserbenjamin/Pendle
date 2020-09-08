@@ -24,7 +24,7 @@ const JCR = React.lazy(() => import("./screens/JCR"));
 const Witch = React.lazy(() => import("./screens/Witch"));
 const Talks = React.lazy(() => import("./screens/Talks"));
 
-const Container = tw.div`w-full h-full fixed bg-gray-200 flex flex-col`;
+const Container = tw.div`w-full h-full fixed bg-gray-100 flex flex-col`;
 const Header = tw.div`w-full bg-white flex flex-row p-3 flex-shrink-0 cursor-pointer`;
 const Content = tw.div`w-full flex flex-col flex-grow overflow-y-auto`;
 const Logo = tw.img`w-full bg-white h-20`;

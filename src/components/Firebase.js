@@ -5,6 +5,7 @@ import "firebase/performance";
 import "firebase/storage";
 import "firebase/auth";
 import "firebase/analytics";
+import "firebase/functions";
 import CookiesContext from "../context/cookiesContext";
 
 const firebaseConfig = {
