@@ -6,6 +6,7 @@ import EventsList from "../components/EventsList";
 import {useAnalytics} from "../components/Firebase";
 
 const Welcome = React.lazy(() => import("../screens/events/Welcome"));
+const JCRCookOff = React.lazy(() => import("../screens/events/JCRCookOff"));
 const CookOff = React.lazy(() => import("../screens/events/CookOff"));
 const SocietyShowcase = React.lazy(() => import("../screens/events/SocietyShowcase"));
 const PubQuiz = React.lazy(() => import("../screens/events/PubQuiz"));
@@ -19,6 +20,10 @@ const PendleParty = React.lazy(() => import("../screens/events/PendleParty"));
 const Discord = React.lazy(() => import("../screens/events/Discord"));
 const CoffeeMorning = React.lazy(() => import("../screens/events/CoffeeMorning"));
 const SpendingTime = React.lazy(() => import("../screens/events/SpendingTime"));
+const TaskMaster = React.lazy(() => import("../screens/events/TaskMaster"));
+const PostIt = React.lazy(() => import("../screens/events/PostIt"));
+const SelfieHunt = React.lazy(() => import("../screens/events/SelfieHunt"));
+const NetflixNight = React.lazy(() => import("../screens/events/NetflixNight"));
 
 const Container = tw.div``;
 
@@ -32,6 +37,10 @@ export default () => {
     return (
         <Container>
             <Switch>
+                <Route path="/event/netflix-party" component={NetflixNight}/>
+                <Route path="/event/selfie-hunt" component={SelfieHunt}/>
+                <Route path="/event/postit-competition" component={PostIt}/>
+                <Route path="/event/taskmaster" component={TaskMaster}/>
                 <Route path="/event/time-in-pendle" component={SpendingTime}/>
                 <Route path="/event/coffee-morning" component={CoffeeMorning}/>
                 <Route path="/event/discord" component={Discord}/>
@@ -42,7 +51,8 @@ export default () => {
                 <Route path="/event/college-life" component={CollegeQA}/>
                 <Route path="/event/beach-party" component={BeachParty}/>
                 <Route path="/event/welcome" component={Welcome}/>
-                <Route path="/event/jcr-cook-off" component={CookOff}/>
+                <Route path="/event/cook-off" component={CookOff}/>
+                <Route path="/event/jcr-cook-off" component={JCRCookOff}/>
                 <Route path="/event/society-showcase" component={SocietyShowcase}/>
                 <Route path="/event/quiz" component={PubQuiz}/>
                 <Route path="/event/pendle-live" component={PendleLive}/>

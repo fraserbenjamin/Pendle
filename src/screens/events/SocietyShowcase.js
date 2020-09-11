@@ -94,16 +94,16 @@ export default () => {
                     <rect style={style3} x="371" y="126" width="40" height="40" onClick={() => setActive({name: "SCAN", id: "gO--DpoSHwU"})}/>
                     <rect style={style3} x="413" y="126" width="40" height="40" onClick={() => setActive({name: "ISSUE", id: "DpnoaqjrKko"})}/>
                     <polygon style={style4} points="124 40 84 40 84 0 109 0 124 15 124 40" onClick={() => setActive({name: "Acapella", id: "7dkfGRs4O3U"})}/>
-                    <polygon style={style3} points="453 84 412 84 371 124 453 124 453 84" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style1} x="52" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style1} x="94" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style1} x="136" y="288" width="82" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style1} x="220" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <polygon style={style1} points="10 288 50 288 50 328 25 328 10 313 10 288" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style1} x="280" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style1} x="322" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <rect style={style1} x="364" y="288" width="40" height="40" onClick={() => setActive({name: "", id: ""})}/>
-                    <polygon style={style1} points="406 328 406 288 446 288 446 313 431 328 406 328" onClick={() => setActive({name: "", id: ""})}/>
+                    <polygon style={style3} points="453 84 412 84 371 124 453 124 453 84" onClick={() => setActive({name: "Take 2 Cinema", id: "bYxt34LEv5A"})}/>
+                    <rect style={style1} x="52" y="288" width="40" height="40" onClick={() => setActive({name: "Dr Who", id: "t8GHedaOwXc"})}/>
+                    <rect style={style1} x="94" y="288" width="40" height="40"/>
+                    <rect style={style1} x="136" y="288" width="82" height="40"/>
+                    <rect style={style1} x="220" y="288" width="40" height="40"/>
+                    <polygon style={style1} points="10 288 50 288 50 328 25 328 10 313 10 288"/>
+                    <rect style={style1} x="280" y="288" width="40" height="40"/>
+                    <rect style={style1} x="322" y="288" width="40" height="40"/>
+                    <rect style={style1} x="364" y="288" width="40" height="40"/>
+                    <polygon style={style1} points="406 328 406 288 446 288 446 313 431 328 406 328"/>
 
                     {/* Top Green Zone */}
                     <text style={text} transform="translate(148.57 24.14)">Barbell</text>
@@ -117,9 +117,9 @@ export default () => {
                     <text style={text} transform="translate(131 209)">LA1TV</text>
                     <text style={{...text, fontSize: "6px"}} transform="translate(87 208)">Trampolining</text>
                     <text style={{...text, fontSize: "8px"}} transform="translate(46 208)">Shooting</text>
-                    <text style={text} transform="translate(5 195)">
-                        <tspan x="3" dy="1.2em">Water</tspan>
-                        <tspan x="6" dy="1.2em">Polo</tspan>
+                    <text style={{...text, fontSize: "6px"}} transform="translate(2 200)">
+                        <tspan x="3" dy="1.2em">Swimming &</tspan>
+                        <tspan x="6" dy="1.2em">Water Polo</tspan>
                     </text>
                     <text style={text} transform="translate(7 234)">
                         <tspan x="0" dy="1.2em">Rugby</tspan>
@@ -194,6 +194,15 @@ export default () => {
                     </text>
                     <text style={text} transform="translate(378 150)">SCAN</text>
                     <text style={text} transform="translate(420 150)">ISSUE</text>
+                    <text style={text} transform="translate(410 90)">
+                        <tspan x="3" dy="1.2em">Take 2</tspan>
+                        <tspan x="0" dy="1.2em">Cinema</tspan>
+                    </text>
+
+                    {/* Bottom Green Zone */}
+                    <text style={text} transform="translate(55 311)">
+                        Dr Who
+                    </text>
                 </Map>
                 </MapCase>
 

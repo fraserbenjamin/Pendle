@@ -17,12 +17,12 @@ export default () => {
     const location = useLocation();
 
     const event = events.filter(item => `/event/${item.path}` === location.pathname)[0];
-    const url = "https://www.facebook.com/events/776691403084488";
+    const url = "https://www.facebook.com/events/782824782467280";
 
     return (
         <Frame>
             <Container>
-                <Title>Cook Off</Title>
+                <Title>{event?.title}</Title>
                 <Body>
                     {event?.description}
                     <br/><br/>
