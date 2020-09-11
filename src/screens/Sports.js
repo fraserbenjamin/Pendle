@@ -54,12 +54,13 @@ export default () => {
         }).catch(function(error) {
             // Uh-oh, an error occurred!
         });
-    }, [listRef]);
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    }, []);
 
     return (
         <Frame>
             <Container>
-                <Title>Sports</Title>
+                <div tw="text-2xl font-bold">Sports</div>
                 <Body>
                 Pendle has a wide variety of successful sporting teams. Last year alone, the netball A team won the league and were headed to Roses to represent Lancaster against York. The women's pool team and the new Pendle rugby team also finished top of their leagues, with table tennis, women's darts and dominoes coming runners up and A team football finishing third. On top of this, Pendle is known for its outstanding barsports and has won the George Wyatt Trophy five out of the last seven years.
                 <br/><br/>
@@ -70,13 +71,16 @@ export default () => {
                 Finally, Warriors is a big end of year sporting competition between Pendle and Grizedale. It is a celebration of the sporting year and offers a fun outlet for those getting ready for summer term exams. Here, not only are the college sports involved, but also other sports, such as basketball or hockey. The sports offer opportunities for everyone to get involved, regardless of ability or knowledge of the game, so it provides the perfect mix of competitiveness and sociability. If you're not overly sporty though, there is still a chance to get involved throughout the Warriors weekend, by buying Pendle merch to show college pride, as well as participating in the non-sports events such as the Warriors Pub Quiz, various eating competitions and more! There's a space for everyone to get involved!
                 </Body>
 
-                <Title>Follow our college sports below</Title>
-                <div tw="grid grid-cols-3 gap-3 mb-5">
+                <div tw="text-2xl font-bold">Teams and Captains</div>
+                <Captains/>
+
+                <div tw="grid grid-cols-1 md:grid-cols-3 gap-3 mb-5">
                     <InstragramButton onClick={() => window.open("https://www.instagram.com/pendlecollegesport/", "_blank")}>@pendlecollegesport</InstragramButton>
                     <InstragramButton onClick={() => window.open("https://www.instagram.com/pendlenetball/", "_blank")}>@pendlenetball</InstragramButton>
                     <InstragramButton onClick={() => window.open("https://www.instagram.com/pendlecollegefc/", "_blank")}>@pendlecollegefc</InstragramButton>
                 </div>
 
+                <div tw="text-2xl font-bold mb-5">Gallery</div>
                 <PhotoGrid ref={gridRef}>
                     <Grid
                         images={images}
@@ -88,4 +92,46 @@ export default () => {
             </Container>
         </Frame>
   );
+}
+
+const Group = tw.div`bg-white shadow-md m-2 p-3 border border-pendle-green`;
+
+const Captains = () => {
+    return (
+        <div tw="grid grid-cols-1 md:grid-cols-3">
+            <Group>
+                <Title>Pool</Title>
+                Women's Captain - Megan Liddell<br/>
+                Men's As Captain - Ruairi Webb<br/>
+                Men's Bs Captain - Elliot Mills<br/> 
+            </Group>
+            <Group>
+                <Title>Darts</Title>
+                Women's Captain - Awaiting Outcome<br/>
+                Men's Captain - Elliot Mills<br/>
+            </Group>
+            <Group>
+                <Title>Dominoes</Title>
+                Captain - Mark Dearden<br/>
+            </Group>
+            <Group>
+                <Title>Table Tennis</Title>
+                Captain - Toma Madansky<br/>
+            </Group>
+            <Group>
+                <Title>Netball</Title>
+                A Team Captain - Becky Lynch<br/>
+                B Team Captain - Georgia Whelan<br/>
+                C Team Captain - Rachael Williams<br/>
+                Rec Team Captains - Kirsty Whittle and Megan Liddell<br/>
+            </Group>
+            <Group>
+                <Title>Football</Title>
+                A Team Captains - Tim Bryce & Kareem Shah<br/>
+                B Team Captain - Elliot Chesters<br/>
+                C Team Captain - Dan Horrocks<br/>
+                D Team Captain - Bilal Ibrahim<br/>
+            </Group>
+        </div>
+    )
 }
