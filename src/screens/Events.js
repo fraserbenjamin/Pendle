@@ -24,6 +24,7 @@ const TaskMaster = React.lazy(() => import("../screens/events/TaskMaster"));
 const PostIt = React.lazy(() => import("../screens/events/PostIt"));
 const SelfieHunt = React.lazy(() => import("../screens/events/SelfieHunt"));
 const NetflixNight = React.lazy(() => import("../screens/events/NetflixNight"));
+const Bingo = React.lazy(() => import("../screens/events/Bingo"));
 
 const Container = tw.div``;
 
@@ -37,6 +38,7 @@ export default () => {
     return (
         <Container>
             <Switch>
+                <Route path="/event/bingo" component={Bingo}/>
                 <Route path="/event/netflix-party" component={NetflixNight}/>
                 <Route path="/event/selfie-hunt" component={SelfieHunt}/>
                 <Route path="/event/postit-competition" component={PostIt}/>
