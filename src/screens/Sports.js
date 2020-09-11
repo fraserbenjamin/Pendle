@@ -132,6 +132,10 @@ const Captains = () => {
                 C Team Captain - Dan Horrocks<br/>
                 D Team Captain - Bilal Ibrahim<br/>
             </Group>
+            <Group>
+                <Title>Rugby</Title>
+                Captain - Keenan Taku<br/>
+            </Group>
         </div>
     )
 }
