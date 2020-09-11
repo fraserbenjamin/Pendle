@@ -1,7 +1,8 @@
 import React, {useState, useEffect, Suspense} from 'react';
 import tw from 'twin.macro';
 import 'tailwindcss/dist/base.min.css';
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {Router, Switch, Route, Link} from "react-router-dom";
+import { createBrowserHistory } from 'history';
 
 import PendleLogo from "./assets/pendle-college-logo.svg";
 
@@ -12,10 +13,10 @@ import EventsContext from "./context/eventsContext";
 import Menu from "./components/Menu";
 import LoadingCard from "./components/LoadingCard";
 import Cookies from "./components/Cookies";
-
 import Messenger from './components/Messenger';
-import Firebase, {useFirebase} from './components/Firebase';
+import Firebase, {useFirebase, useAnalytics} from './components/Firebase';
 const firebase = useFirebase();
+const analytics = useAnalytics();
 
 const Events = React.lazy(() => import("./screens/Events"));
 const Welfare = React.lazy(() => import("./screens/Welfare"));
@@ -30,8 +31,18 @@ const Content = tw.div`w-full flex flex-col flex-grow overflow-y-auto`;
 const Logo = tw.img`w-full bg-white h-20`;
 
 export default () => {
+    const history = createBrowserHistory();
+
+    history.listen((location) => {
+        console.log(location)
+
+        analytics.logEvent('page_view', {
+            page_path: location.pathname,
+        });
+    });
+
     return (
-        <Router>
+        <Router history={history}>
         <ContextProviders>
             <Cookies/>
             <Firebase/>
