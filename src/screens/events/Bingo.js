@@ -53,7 +53,7 @@ const Button = tw.button`bg-pendle-green text-white rounded-md m-1 py-3`;
 
 const Generator = () => {
     const [numbers, setNumbers] = useState([]);
-    const max = 100;
+    const max = 100;    //0-99
 
 
     const getRandom = () => {
