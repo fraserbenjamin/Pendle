@@ -27,7 +27,7 @@ const Page = () => {
     const {events} = useContext(EventsContext);
     const location = useLocation();
     const event = events.filter(item => `/event/${item.path}` === location.pathname.replace(/\/$/, ""))[0];
-    const url = "https://www.facebook.com/events/782824782467280";
+    const url = "https://www.facebook.com/events/363882388329650";
 
     return (
         <Frame>
