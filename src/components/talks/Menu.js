@@ -16,7 +16,7 @@ const Colleges = tw.img`w-full`;
 const Fire = tw(Item)`bg-red-600 text-white`;
 const Consent = tw(Item)`bg-purple-800 text-white`;
 const Safety = tw(Item)`bg-teal-600 text-white`;
-const Help = tw(Item)`bg-orange-600 text-white`;
+const Help = tw(Item)`bg-blue-600 text-white`;
 
 export default () => {
     return (

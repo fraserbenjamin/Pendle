@@ -8,7 +8,7 @@ import YouTubePopup from '../YouTubePopup';
 const Container = tw.div`flex flex-col justify-center p-3`;
 const Title = tw.div`font-semibold text-lg`;
 const Body = tw.p`my-2 flex-grow`;
-const Button = tw.button`bg-pendle-yellow text-white py-1 px-5 rounded-md`;
+const Button = tw.button`bg-pendle-yellow text-black py-1 px-5 rounded-md`;
 
 export default () => {
     const [videoActive, setVideoActive] = useState(false);
