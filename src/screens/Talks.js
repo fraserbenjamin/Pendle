@@ -6,6 +6,7 @@ import Menu from '../components/talks/Menu';
 import RespectConsent from '../components/talks/RespectConsent';
 import FireSafety from '../components/talks/FireSafety';
 import HealthSafety from '../components/talks/HealthSafety';
+import Help from '../components/talks/Help';
 
 import {useAnalytics} from "../components/Firebase";
 
@@ -26,6 +27,7 @@ export default () => {
                     <Route path="/talks/respect-consent" component={RespectConsent}/>
                     <Route path="/talks/fire-safety" component={FireSafety}/>
                     <Route path="/talks/health-safety" component={HealthSafety}/>
+                    <Route path="/talks/help" component={Help}/>
                     <Route path="/" component={Menu}/>
                 </Switch>
             </Container>
