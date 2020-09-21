@@ -26,7 +26,7 @@ export default () => {
 
             <Title>Introduction to University</Title>
             <Body>
-            Be sure to complete all 4 of these introductory sessions.
+            Be sure to complete all 3 of these introductory sessions.
             </Body>
             
             <Frame>
