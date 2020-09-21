@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import tw, {styled} from 'twin.macro';
 import {useLocation} from "react-router-dom";
 
@@ -7,6 +7,8 @@ import EventsContext from "../../context/eventsContext";
 import Tag from "../../components/ui/Tag";
 import PendleCollege from "../../assets/pendle-college-quad.webp";
 import {useAnalytics} from "../../components/Firebase";
+import YouTubePopup from '../../components/YouTubePopup';
+import YouTubeButton from "../../components/ui/YouTubeButton";
 
 const Frame = tw.div`flex justify-center p-3`;
 const Container = tw.div`w-full bg-white font-effra h-full shadow-md max-w-4xl p-3`;
@@ -21,6 +23,7 @@ export default () => {
     const {events} = useContext(EventsContext);
     const location = useLocation();
     const analytics = useAnalytics();
+    const [videoActive, setVideoActive] = useState(false);
 
     analytics.logEvent('page_view', {
         page_title: 'Welcome',
@@ -41,6 +44,11 @@ export default () => {
                 <br/><br/>
                 If you’re the sort of student who likes to be involved, Pendle’s where you belong!
                 </Body>
+
+                Be sure to watch our welcome talk at 18:15 on YouTube.
+
+                <YouTubeButton onClick={() => setVideoActive(true)}/>
+                {videoActive && <YouTubePopup id="x7ONmPOQF9s" close={() => setVideoActive(false)}/>}
 
                 {events.filter(item => `/event/${item.path}` === location.pathname)[0]?.tags?.map((tag,i) => (
                     <Tag key={i}>{tag}</Tag>
