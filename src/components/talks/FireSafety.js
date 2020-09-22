@@ -7,6 +7,8 @@ import {useAnalytics} from "../Firebase";
 import YouTubeButton from '../ui/YouTubeButton';
 import YouTubePopup from '../YouTubePopup';
 
+import Sections from "./FireSafetyPages";
+
 const Container = tw.div`flex flex-col justify-center p-3`;
 const Button = tw.button`bg-pendle-green text-white py-1 px-5 rounded-md`;
 
@@ -19,7 +21,7 @@ export default () => {
     });
 
     const history = useHistory();
-    const totalSections = 3;
+    const totalSections = 3 + Sections.length;
 
     return (
         <Container>
@@ -30,7 +32,8 @@ export default () => {
             {currentSection === 0 && <Welcome/>}
             {currentSection === 1 && <PrimaryVideo/>}
             {currentSection === 2 && <CookingVideo/>}
-            {currentSection === 3 && <Links/>}
+            {currentSection === totalSections && <Links/>}
+            {currentSection >= 3 && Sections[currentSection-3]}
 
             <div tw="flex justify-between mt-8">
                 <Button onClick={() => (currentSection > 0) ? setCurrentSection(prevSection => prevSection - 1) : null} style={(currentSection > 0) ? {} : tw`bg-gray-400 text-black cursor-not-allowed`}>Previous</Button>
@@ -66,7 +69,7 @@ const PrimaryVideo = () => {
     return (
         <div>
             <div tw="text-pendle-green font-bold text-xl">Fire Safety Essentials</div>
-            The following presentation by Gary Seekins will take you through the key areas of fire safety you need to know.
+            The following presentation by Gary Seekins will take you through the key areas of fire safety you need to know. Alternatively the following screens contain the same information in a text based format.
 
             {videoOpen && <YouTubePopup id="MjbqBaAr1Vo" close={() => setVideoOpen(false)}/>}
             <YouTubeButton onClick={() => setVideoOpen(true)}/>
