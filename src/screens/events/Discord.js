@@ -19,7 +19,7 @@ export default () => {
     const location = useLocation();
     const analytics = useAnalytics();
     const event = events.filter(item => `/event/${item.path}` === location.pathname)[0];
-    const url = "https://discord.gg/Mf8snd";
+    const url = "https://discord.gg/wJqA3hM";
 
     analytics.logEvent('page_view', {
         page_title: 'Discord',
