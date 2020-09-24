@@ -66,3 +66,64 @@ exports.calculateQuizScore = functions.region('europe-west2').https.onCall((data
         };
     });
 });
+
+exports.calculateQuizScore = functions.region('europe-west2').https.onCall((data, context) => {
+    return Promise.all([loadTeams, loadAnswers]).then((values) => {
+        const teams = values[0];
+        const answers = values[1];
+
+        console.log(`${Object.keys(teams).length} teams`);
+        console.log(`${answers.length} questions`);
+
+        let scores = {};
+
+        for (const [key, value] of Object.entries(teams)) {
+            scores[key] = markQuestions(value, answers);
+        }
+
+        admin.firestore().collection("quiz").doc("scores").set(scores)
+        return {
+            scores,
+            teams,
+            answers
+        };
+    });
+});
+
+const generateRandom = () => {
+    let N = 6;
+    return Array(N+1).join((Math.random().toString(36)+'00000000000000000').slice(2, 18)).slice(0, N);
+}
+
+exports.createTeam = functions.region('europe-west2').https.onCall(async(data, context) => {
+    try {
+        const doc = await admin.firestore().collection("quiz").doc("teams").get();
+        if(doc.exists) {
+            const teams = doc.data();
+            const teamIds = [];
+
+            for (const [key] of Object.entries(teams)) {
+                teamIds.push(key);
+            }
+            
+            let valid = false;
+            let teamId = generateRandom();
+
+            while(!valid) {
+                if(!teamIds.includes(teamId)) {
+                    valid = true;
+                }
+            }
+
+            await admin.firestore().collection("quiz").doc("teams").update({
+                [teamId]: {name: data.teamName},
+            })
+
+            return teamId;
+        }
+    } catch(e) {
+        console.error(e);
+    }
+
+    return null;
+});

@@ -5,8 +5,8 @@ import {Switch, Route, useRouteMatch} from "react-router-dom";
 import DisplayQuestion from './DisplayQuestion';
 import AllQuestions from './AllQuestions';
 import Introduction from './Introduction';
-import Video from './Video';
 
+import YouTubePlayer from "../YouTubePlayer";
 import QuizContext from "../../context/quizContext";
 import Admin from './Admin';
 
@@ -22,7 +22,9 @@ export default () => {
     return (
         <Frame>
             <Container>
-                <Video/>
+                <div>
+                    <YouTubePlayer id="UXOqf32oZKc"/>
+                </div>
 
                 <Switch>
                     <Route path={`${match.path}/admin`} component={Admin}/>

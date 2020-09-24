@@ -6,18 +6,13 @@ import QuizContext from '../../context/quizContext';
 import {useFirebase} from '../../components/Firebase';
 const firebase = useFirebase();
 
-const generateRandom = () => {
-    let N = 6;
-    return Array(N+1).join((Math.random().toString(36)+'00000000000000000').slice(2, 18)).slice(0, N);
-}
-
 export default ({children}) => {
     const history = useHistory();
     const db = firebase.firestore();
     const [state, setState] = useState({});
     const [teams, setTeams] = useState([]);
     const [questions, setQuestions] = useState({});
-    const [teamId, setTeamId] = useLocalStorage("teamId", generateRandom());
+    const [teamId, setTeamId] = useLocalStorage("teamId", "null");
 
     useEffect(() => {
         if(!teamId || teamId === "null") {
@@ -60,7 +55,7 @@ export default ({children}) => {
 
     const setGuess = (questionId, guess) => {
         db.doc("quiz/teams").update({
-            [`list.${teamId}.${questionId}`]: guess
+            [`${teamId}.${questionId}`]: guess
         });
     }
 

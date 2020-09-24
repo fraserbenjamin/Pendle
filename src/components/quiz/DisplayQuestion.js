@@ -13,14 +13,13 @@ export default () => {
     const history = useHistory();
     const {state, teams, questions, teamId} = useContext(QuizContext);
 
-    if(state.currentQuestion >= 0 && questions?.list?.length > 0 && teams?.list && teamId && state.currentQuestion < questions.list.length) {
+    if(state.currentQuestion >= 0 && questions?.list?.length > 0 && teams && teamId && teams[teamId] && state.currentQuestion < questions.list.length) {
         let questionId = state.currentQuestion;
         let question = questions.list[questionId];
-        let answer = (teams.list[teamId]) ? teams.list[teamId][questionId] : null;
+        let answer = (teams[teamId]) ? teams[teamId][questionId] : null;
 
         return (
             <Container>
-                
                 <Team onClick={() => history.push("/event/quiz/introduction")}>Team {teamId}</Team>
 
                 <Title>Round {question.round} Question {state.currentQuestion + 1}</Title>
