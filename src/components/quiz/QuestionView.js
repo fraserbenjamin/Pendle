@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import tw, {styled} from 'twin.macro';
 
 import QuizContext from "../../context/quizContext";
@@ -25,14 +25,18 @@ export default ({data, active}) => {
     const {setGuess} = useContext(QuizContext);
     const [image, setImage] = useState(null);
 
-    if(data.question.picture) {
-        var storage = firebase.storage();
-        var storageRef = storage.ref();
-
-        storageRef.child(`Quiz/${data.question.picture}`).getDownloadURL().then(function(url) {
-            setImage(url)
-        });
-    }
+    useEffect(() => {
+        if(data.question.picture) {
+            var storage = firebase.storage();
+            var storageRef = storage.ref();
+    
+            storageRef.child(`Quiz/${data.question.picture}`).getDownloadURL().then(function(url) {
+                setImage(url)
+            });
+        } else {
+            setImage(null);
+        }
+    }, [data.question.picture]);
 
     return (
         <Card>

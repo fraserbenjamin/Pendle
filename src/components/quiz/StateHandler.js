@@ -10,13 +10,22 @@ export default ({children}) => {
     const history = useHistory();
     const db = firebase.firestore();
     const [state, setState] = useState({});
-    const [teams, setTeams] = useState([]);
+    const [team, setTeam] = useState({});
     const [questions, setQuestions] = useState({});
     const [teamId, setTeamId] = useLocalStorage("teamId", "null");
 
     useEffect(() => {
+        const unsubscribeTeam = db.collection("party").doc(teamId)
+        .onSnapshot((doc) => {
+            setTeam(doc.data());
+        });
+
         if(!teamId || teamId === "null") {
             history.push("/event/quiz/introduction")
+        }
+
+        return () => {
+            unsubscribeTeam();
         }
     // eslint-disable-next-line
     }, [teamId])
@@ -32,15 +41,9 @@ export default ({children}) => {
             setQuestions(doc.data());
         });
 
-        let unsubscribeTeams = db.collection("quiz").doc("teams")
-        .onSnapshot((doc) => {
-            setTeams(doc.data());
-        });
-
         return () => {
             unsubscribeState();
             unsubscribeQuestions();
-            unsubscribeTeams();
         }
     // eslint-disable-next-line
     }, []);
@@ -54,23 +57,22 @@ export default ({children}) => {
     }
 
     const setGuess = (questionId, guess) => {
-        db.doc("quiz/teams").update({
-            [`${teamId}.${questionId}`]: guess
+        db.collection("party").doc(teamId).update({
+            [`answers.${questionId}`]: guess
         });
     }
 
     return (
         <QuizContext.Provider value={{
             state,
-            teams,
+            team,
             questions,
             teamId,
             setTeamId,
             setState,
-            setTeams,
             setQuestions,
             setGuess,
-            round: getRound()
+            round: getRound(),
           }}>
               {children}
         </QuizContext.Provider>

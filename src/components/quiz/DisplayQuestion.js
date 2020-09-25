@@ -7,23 +7,28 @@ import QuestionView from "./QuestionView";
 
 const Container = tw.div`w-full font-effra p-3`;
 const Title = tw.div`font-bold p-3 text-lg`;
-const Team = tw.button`m-2 p-3 rounded-sm font-semibold bg-pendle-green text-white`;
+const Button = tw.button`m-2 p-3 rounded-sm font-semibold bg-pendle-green text-white flex-grow`;
 
 export default () => {
     const history = useHistory();
-    const {state, teams, questions, teamId} = useContext(QuizContext);
+    const {state, team, questions, teamId} = useContext(QuizContext);
 
-    if(state.currentQuestion >= 0 && questions?.list?.length > 0 && teams && teamId && teams[teamId] && state.currentQuestion < questions.list.length) {
+    if(state.currentQuestion >= 0 && questions?.list?.length > 0 && team && teamId && state.currentQuestion < questions.list.length) {
         let questionId = state.currentQuestion;
         let question = questions.list[questionId];
-        let answer = (teams[teamId]) ? teams[teamId][questionId] : null;
-
+        let answer = (team.answers && team.answers[questionId]) ? team.answers[questionId] : null;
+        
         return (
             <Container>
-                <Team onClick={() => history.push("/event/quiz/introduction")}>Team {teamId}</Team>
+                <div tw="flex">
+                    <Button onClick={() => history.push("/event/quiz/introduction")}>Team {teamId}</Button>
+                    <Button onClick={() => history.push("/event/quiz/all")}>All Questions</Button>
+                </div>
 
                 <Title>Round {question.round} Question {state.currentQuestion + 1}</Title>
+
                 <QuestionView data={{question, answer, questionId}} active={true}/>
+
             </Container>
         );
     }

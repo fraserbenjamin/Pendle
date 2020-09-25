@@ -97,30 +97,23 @@ const generateRandom = () => {
 
 exports.createTeam = functions.region('europe-west2').https.onCall(async(data, context) => {
     try {
-        const doc = await admin.firestore().collection("quiz").doc("teams").get();
-        if(doc.exists) {
-            const teams = doc.data();
-            const teamIds = [];
-
-            for (const [key] of Object.entries(teams)) {
-                teamIds.push(key);
+        let valid = false;
+        let teamId = generateRandom();
+    
+        /* eslint-disable no-await-in-loop */
+        while(!valid) {
+            const doc = await admin.firestore().collection("party").doc(teamId).get();
+            if(!doc.exists) {
+                await admin.firestore().collection("party").doc(teamId).set({
+                    name: data.teamName,
+                })
+                valid = true;
+            } else {
+                teamId = generateRandom();
             }
-            
-            let valid = false;
-            let teamId = generateRandom();
-
-            while(!valid) {
-                if(!teamIds.includes(teamId)) {
-                    valid = true;
-                }
-            }
-
-            await admin.firestore().collection("quiz").doc("teams").update({
-                [teamId]: {name: data.teamName},
-            })
-
-            return teamId;
         }
+    
+        return teamId;
     } catch(e) {
         console.error(e);
     }
