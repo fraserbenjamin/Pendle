@@ -34,7 +34,6 @@ export default () => {
     const history = createBrowserHistory();
 
     history.listen((location) => {
-        console.log(location)
 
         analytics.logEvent('page_view', {
             page_path: location.pathname,

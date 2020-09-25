@@ -30,7 +30,6 @@ export default () => {
         const functions = firebase.app().functions('europe-west2');
         var createTeam = functions.httpsCallable('createTeam');
         createTeam({teamName: newTeamName}).then((result) => {
-            console.log(result.data)
             setTeamId(result.data);
             history.push("/event/quiz");
         });
@@ -40,7 +39,6 @@ export default () => {
         if(!joinTeamCode) return;
 
         const doc = await db.collection("party").doc(joinTeamCode).get();
-        console.log(doc)
         if(doc.exists) {
             setTeamId(joinTeamCode);
             history.push("/event/quiz");

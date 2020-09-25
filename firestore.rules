@@ -8,5 +8,9 @@ service cloud.firestore {
       allow read;
       allow write;
     }
+    match /party/{team} {
+    	allow read;
+      allow write;
+    }
   }
 }
