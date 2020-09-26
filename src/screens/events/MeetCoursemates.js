@@ -28,7 +28,7 @@ export default () => {
                 <Body>
                     {event?.description}
                     <br/><br/>
-                    Click the link below and launch teams to chat to others on your course.
+                    Click the link below and launch teams to chat to others on your course. The join code is <b>nv11by3</b>
 
                     <Teams onClick={() => window.open(url, "_blank")}>
                         <Img src={TeamsLogo}/>

@@ -13,6 +13,13 @@ export default () => {
     const history = useHistory();
     const {state, team, questions, teamId} = useContext(QuizContext);
 
+    console.log("-------------------")
+    console.log(state)
+    console.log(team)
+    console.log(questions)
+    console.log(teamId)
+    console.log("-------------------")
+
     if(state.currentQuestion >= 0 && questions?.list?.length > 0 && team && teamId && state.currentQuestion < questions.list.length) {
         let questionId = state.currentQuestion;
         let question = questions.list[questionId];

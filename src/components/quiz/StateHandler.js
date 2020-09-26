@@ -15,35 +15,34 @@ export default ({children}) => {
     const [teamId, setTeamId] = useLocalStorage("teamId", "null");
 
     useEffect(() => {
-        const unsubscribeTeam = db.collection("party").doc(teamId)
-        .onSnapshot((doc) => {
-            setTeam(doc.data());
-        });
-
         if(!teamId || teamId === "null") {
             history.push("/event/quiz/introduction")
-        }
-
-        return () => {
-            unsubscribeTeam();
         }
     // eslint-disable-next-line
     }, [teamId])
 
     useEffect(() => {
+        let unsubscribeTeam = db.collection("party").doc(teamId)
+        .onSnapshot((doc) => {
+            setTeam(doc.data());
+        });
+
         let unsubscribeState = db.collection("quiz").doc("state")
         .onSnapshot((doc) => {
+            console.log(doc.data())
             setState(doc.data());
         });
 
         let unsubscribeQuestions = db.collection("quiz").doc("questions")
         .onSnapshot((doc) => {
+            console.log(doc.data())
             setQuestions(doc.data());
         });
 
         return () => {
             unsubscribeState();
             unsubscribeQuestions();
+            unsubscribeTeam();
         }
     // eslint-disable-next-line
     }, []);
