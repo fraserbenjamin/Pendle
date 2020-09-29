@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, useState} from 'react';
 import tw from 'twin.macro';
 import {useLocation} from "react-router-dom";
 import moment from "moment";
