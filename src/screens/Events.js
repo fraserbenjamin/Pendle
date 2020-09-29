@@ -25,6 +25,7 @@ const SelfieHunt = React.lazy(() => import("../screens/events/SelfieHunt"));
 const NetflixNight = React.lazy(() => import("../screens/events/NetflixNight"));
 const Bingo = React.lazy(() => import("../screens/events/Bingo"));
 const Extrav = React.lazy(() => import("../screens/events/Extrav"));
+const ComedyNight = React.lazy(() => import("../screens/events/ComedyNight"));
 
 const Container = tw.div``;
 
@@ -32,6 +33,7 @@ export default () => {
     return (
         <Container>
             <Switch>
+                <Route path="/event/comedy-night" component={ComedyNight}/>
                 <Route path="/event/bingo" component={Bingo}/>
                 <Route path="/event/homestrav" component={Extrav}/>
                 <Route path="/event/netflix-party" component={NetflixNight}/>
