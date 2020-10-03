@@ -17,7 +17,7 @@ export default () => {
     const location = useLocation();
 
     const event = events.filter(item => `/event/${item.path}` === location.pathname)[0];
-    const url = "https://youtu.be/O7IG_v4jGMw";
+    const url = "https://youtu.be/71kEr8nx934";
 
     return (
         <Frame>

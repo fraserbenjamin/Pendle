@@ -26,6 +26,8 @@ const NetflixNight = React.lazy(() => import("../screens/events/NetflixNight"));
 const Bingo = React.lazy(() => import("../screens/events/Bingo"));
 const Extrav = React.lazy(() => import("../screens/events/Extrav"));
 const ComedyNight = React.lazy(() => import("../screens/events/ComedyNight"));
+const Sports = React.lazy(() => import("../screens/events/Sports"));
+const OpenMic = React.lazy(() => import("../screens/events/OpenMic"));
 
 const Container = tw.div``;
 
@@ -33,6 +35,8 @@ export default () => {
     return (
         <Container>
             <Switch>
+                <Route path="/event/open-mic" component={OpenMic}/>
+                <Route path="/event/meet-captains" component={Sports}/>
                 <Route path="/event/comedy-night" component={ComedyNight}/>
                 <Route path="/event/bingo" component={Bingo}/>
                 <Route path="/event/homestrav" component={Extrav}/>
