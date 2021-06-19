@@ -24,6 +24,7 @@ const Sports = React.lazy(() => import("./screens/Sports"));
 const JCR = React.lazy(() => import("./screens/JCR"));
 const Witch = React.lazy(() => import("./screens/Witch"));
 const Talks = React.lazy(() => import("./screens/Talks"));
+const Timetable = React.lazy(() => import("./screens/Timetable"));
 
 const Container = tw.div`w-full h-full fixed bg-gray-100 flex flex-col`;
 const Header = tw.div`w-full bg-white flex flex-row p-3 flex-shrink-0 cursor-pointer`;
@@ -58,6 +59,7 @@ export default () => {
 
                 <Suspense fallback={<LoadingCard/>}>
                     <Switch>
+                        <Route path="/timetable" component={Timetable}/>
                         <Route path="/talks" component={Talks}/>
                         <Route path="/blog" component={Witch}/>
                         <Route path="/sports" component={Sports}/>

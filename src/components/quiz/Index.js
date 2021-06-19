@@ -1,47 +1,25 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import tw from 'twin.macro';
-import {Switch, Route, useRouteMatch} from "react-router-dom";
 
-import DisplayQuestion from './DisplayQuestion';
-import AllQuestions from './AllQuestions';
-import Introduction from './Introduction';
+import YouTubeButton from "../../components/ui/YouTubeButton";
 
-import YouTubePlayer from "../YouTubePlayer";
-import QuizContext from "../../context/quizContext";
-import Admin from './Admin';
-
-const Frame = tw.div`flex justify-center p-0 sm:p-3`;
+const Frame = tw.div`flex justify-center p-3`;
 const Container = tw.div`w-full bg-white font-effra h-full shadow-md max-w-4xl p-3`;
+const Title = tw.div`font-semibold pt-3 text-lg`;
+const Body = tw.div`flex flex-col`;
 
 export default () => {
-    const match = useRouteMatch();
-    const {state} = useContext(QuizContext);
-    
-    if(state.currentQuestion === -2) return <Placeholder/>;
+    const url = "https://youtu.be/G6_kI6YkNiE";
 
     return (
         <Frame>
             <Container>
-                <div>
-                    <YouTubePlayer id="UXOqf32oZKc"/>
-                </div>
-
-                <Switch>
-                    <Route path={`${match.path}/admin`} component={Admin}/>
-                    <Route path={`${match.path}/all`} component={AllQuestions}/>
-                    <Route path={`${match.path}/introduction`} component={Introduction}/>
-                    <Route path={match.path} component={DisplayQuestion}/>
-                </Switch>
-
+                <Title>Pendle Pub Quiz</Title>
+                <Body>
+                    Click the link below at 19:00 to join the event.
+                    <YouTubeButton onClick={() => window.open(url, "_blank")}/>
+                </Body>
             </Container>
         </Frame>
-    )
-}
-
-const Placeholder = () => {
-    return (
-        <div>
-            There is no quiz currently running, please check the events calendar for our next one!
-        </div>
-    )
+  );
 }
