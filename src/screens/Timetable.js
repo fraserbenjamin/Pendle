@@ -156,7 +156,7 @@ export default () => {
                 </Body>
 
                 <select value={member} onChange={(e) => setMember(e.target.value)} tw="p-3 border border-gray-500">
-                    <option value="">Select a JCR member</option>
+                    <option value="">Select a team member</option>
                     {jcr.map((item, i) => <option key={i} value={item.name}>{item.name}</option>)}
                 </select>
 
