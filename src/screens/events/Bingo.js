@@ -1,6 +1,6 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import tw from 'twin.macro';
-import {useLocation, Route, Switch} from "react-router-dom";
+import { useLocation, Route, Switch } from "react-router-dom";
 
 import EventsContext from "../../context/eventsContext";
 
@@ -16,15 +16,15 @@ export default () => {
 
     return (
         <Switch>
-            <Route path="/event/bingo/generate" component={Generator}/>
-            <Route component={Page}/>
+            <Route path="/event/bingo/generate" component={Generator} />
+            <Route component={Page} />
         </Switch>
     );
 
 }
 
 const Page = () => {
-    const {events} = useContext(EventsContext);
+    const { events } = useContext(EventsContext);
     const location = useLocation();
     const event = events.filter(item => `/event/${item.path}` === location.pathname.replace(/\/$/, ""))[0];
     const url = "https://www.facebook.com/events/363882388329650";
@@ -35,18 +35,18 @@ const Page = () => {
                 <Title>{event?.title}</Title>
                 <Body>
                     {event?.description}
-                    <br/><br/>
+                    <br /><br />
                     Click the link below and to see the event details.
 
-                    <FacebookButton onClick={() => window.open(url, "_blank")}/>
+                    <FacebookButton onClick={() => window.open(url, "_blank")} />
                 </Body>
 
-                {event?.tags?.map((tag,i) => (
+                {event?.tags?.map((tag, i) => (
                     <Tag key={i}>{tag}</Tag>
                 ))}
             </Container>
         </Frame>
-  );
+    );
 }
 
 const Button = tw.button`bg-pendle-green text-white rounded-md m-1 py-3`;
@@ -61,11 +61,11 @@ const Generator = () => {
     }
 
     const uniqueRandom = () => {
-        if(numbers.length === max) return null;
+        if (numbers.length === max) return null;
 
         let value = getRandom();
 
-        while(numbers.includes(value)) {
+        while (numbers.includes(value)) {
             value = getRandom();
         }
 
@@ -75,7 +75,7 @@ const Generator = () => {
     const addNumber = () => {
         let newRandom = uniqueRandom();
 
-        if(newRandom) {
+        if (newRandom !== null) {
             setNumbers(prevState => [...prevState, newRandom])
         } else {
             window.alert("Max Size");
@@ -86,14 +86,14 @@ const Generator = () => {
         <Frame>
             <Container>
                 <Title>Fraser's Random Generator</Title>
-                <Body>
-                    <div tw="break-all">{JSON.stringify(numbers)}</div>
-                    <br/>
-                    <br/>
-                    <div tw="text-4xl">{numbers[numbers.length-1]}</div>
 
+                <Body>
                     <Button onClick={addNumber}>Generate</Button>
                     <Button onClick={() => setNumbers([])}>Reset</Button>
+
+                    <div tw="text-6xl text-center bg-gray-200 rounded m-3">{numbers[numbers.length - 1]}</div>
+
+                    <div tw="break-all text-4xl">{JSON.stringify(numbers)}</div>
                 </Body>
             </Container>
         </Frame>
