@@ -76,7 +76,7 @@ const Generator = () => {
         let newRandom = uniqueRandom();
 
         if(newRandom) {
-            setNumbers(prevState => [...prevState, uniqueRandom()])
+            setNumbers(prevState => [...prevState, newRandom])
         } else {
             window.alert("Max Size");
         }
@@ -85,7 +85,7 @@ const Generator = () => {
     return (
         <Frame>
             <Container>
-                <Title>Random Generator</Title>
+                <Title>Fraser's Random Generator</Title>
                 <Body>
                     <div tw="break-all">{JSON.stringify(numbers)}</div>
                     <br/>
