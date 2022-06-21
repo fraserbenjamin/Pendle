@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome Week Site for Pendle College, see the deployed app here https://pendle.web.app
 
 ## Available Scripts
 
